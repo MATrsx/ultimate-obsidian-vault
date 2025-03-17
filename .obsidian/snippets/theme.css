@@ -1,0 +1,844 @@
+/* @settings
+
+name: Customize Ultimate Obsidian Vault
+id: customize-vault
+settings:
+
+# Workspace
+
+    -
+        id: workspace
+        title: Workspace
+        description: 
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: workspace-vault-selector
+        title: Workspace Vault Selector Panel
+        description: 
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: workspace-vault-selector-position
+        title: Move Vault Selector to top
+        desc: Recolors files to match the folders
+        type: class-toggle
+        default: true
+    -
+        id: workspace-vault-selector-card
+        title: Vault selector own card
+        desc: Recolors files to match the folders
+        type: class-toggle
+        default: true
+    -
+        id: workspace-explorer-selector
+        title: Workpace Explorer
+        description: 
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: workspace-explorer-folder-icon-display
+        title: Hide folder icon if a iconize icon is defined
+        description: Hides the folder icon in the explorer if the folder has a custom iconize icon defined
+        type: class-toggle
+        default: true
+    -
+        id: workspace-explorer-file-icon-display
+        title: Hide file icon if a iconize icon is defined
+        description: Hides the file icon in the explorer if the file has a custom iconize icon defined
+        type: class-toggle
+        default: true
+    -  
+        id: workspace-icon
+        title: Workspace Icon
+        description: 
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: readme-content
+        type: info-text
+        markdown: true
+        description: 🗂️ Customize the vault icon displayed in the vault selector card in the top left. 
+    -
+        id: vault-select-workspace-icon
+        title: Left sidepane background(light mode)
+        type: class-select
+        allowEmpty: false
+        default: vault-workspace-selected-vault-icon
+        options:
+            -   label: Vault (default)
+                value: vault-workspace-selected-vault-icon
+            -   label: University
+                value: vault-workspace-selected-hat-icon
+            -   label: Work
+                value: vault-workspace-selected-briefcase-icon
+            -   label: Book
+                value: vault-workspace-selected-book-icon
+            -   label: Pin Board
+                value: vault-workspace-selected-pin-board-icon
+            -   label: Book with Lightbulb
+                value: vault-workspace-selected-book-bulb-icon
+            -   label: Custom
+                value: vault-workspace-custom-icon
+            -   label: None
+                value: vault-workspace-no-icon
+    - 
+        id: vault-workspace-icon
+        title: Vault Workspace Icon
+        description: Input any CSS data:image url value
+        type: variable-text
+        default: ''
+
+# Rainbow Folders
+
+    -
+        id: anp-rainbow-section-header
+        title: Rainbow Folders
+        description: 
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: readme-content
+        type: info-text
+        markdown: true
+        description: ℹ️ The toggles below affect both **file explorer** and **bookmark** folders.
+    -
+        id: anuppuccin-url-custom-rainbow-colors
+        title: Custom rainbow folder colors snippet
+        description: "Download the snippet through [this link](https://github.com/AnubisNekhet/AnuPpuccin/blob/main/snippets/custom-rainbow-colors.css)."
+        type: info-text
+        markdown: true
+    -
+        id: anp-alt-rainbow-style
+        title: Rainbow style
+        type: class-select
+        allowEmpty: false
+        default: anp-default-rainbow
+        options:
+        -
+            label: None
+            value: anp-default-rainbow
+        -
+            label: Full
+            value: anp-full-rainbow-color-toggle
+        -
+            label: Simple
+            value: anp-simple-rainbow-color-toggle
+
+# Colors :: Rainbow Folders :: Full Folder Settings
+
+    -
+        id: anp-full-rainbow-folder-settings
+        title: Full Folder Settings
+        description: 
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: anp-rainbow-file-toggle
+        title: File recolor toggle
+        desc: Recolors files to match the folders
+        type: class-toggle
+    -
+        id: anp-full-rainbow-text-color-toggle-light
+        title: Invert title colors (Light Mode)
+        type: class-toggle
+    -
+        id: anp-full-rainbow-text-color-toggle-dark
+        title: Invert title colors (Dark Mode)
+        type: class-toggle
+    -
+        id: anp-rainbow-folder-bg-opacity
+        title: Folder background color opacity
+        type: variable-number
+        default: 0.7
+
+# Colors :: Rainbow Folders :: Simple Folder Settings
+
+    -
+        id: anp-simple-rainbow-folder-settings
+        title: Simple Folder Settings
+        description: 
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: anp-simple-rainbow-title-toggle
+        title: Enable title recolor
+        type: class-toggle
+    -
+        id: anp-simple-rainbow-collapse-icon-toggle
+        title: Enable collapse icon recolor
+        type: class-toggle
+    -
+        id: anp-simple-rainbow-indentation-toggle
+        title: Enable collapse indent recolor
+        type: class-toggle
+    -
+        id: anp-simple-rainbow-icon-toggle
+        title: Enable circular file
+        type: class-toggle
+    -
+        id: anp-rainbow-subfolder-color-toggle
+        title: Enable subfolder color inheritance
+        type: class-toggle
+*/
+body:not(.is-mobile):not(:is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light)).workspace-vault-selector-position .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    order: 1;
+    position: absolute;
+    top: 43px;
+    z-index: 10;
+    border-top: 0;
+}
+
+        /* AnuPpuccin */
+        body:not(.is-mobile)[class*="anuppuccin-"]:not(:is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light)) .workspace-split.mod-left-split .workspace-sidedock-vault-profile { 
+            padding: 4px var(--size-4-2);
+            top: 39px;
+            border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+            border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+            margin: 3px var(--size-4-2) var(--size-4-2) var(--size-4-2);
+            border-radius: 0;
+            border: 0;
+        }
+        body:not(.is-mobile)[class*="anuppuccin-"]:not(:is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light)).workspace-vault-selector-card .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+            width: 95%;
+            background: var(--editor-bg-color);
+            padding: 3px;
+            margin: 2px var(--size-4-2) var(--size-4-2) var(--size-4-2);
+            border: 1px solid var(--tab-outline-color) !important;
+            border-radius: var(--anp-card-radius, var(--radius-xl));
+            justify-content: center;
+        }
+        /* Primary */
+        body:not(.is-mobile)[class*="primary-ribbon-"] .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile {
+            background: inherit;
+            width: inherit;
+            padding: var(--size-2-2) var(--size-4-2);
+            margin: 0;
+            border: 0;
+            border-radius: 0;
+        }
+        body:not(.is-mobile)[class*="primary-ribbon-"].workspace-vault-selector-card .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile {
+            width: 95%;    
+            background: var(--editor-bg-color);
+            padding: 3px;
+            margin: 3px var(--size-4-2) var(--size-4-2) var(--size-4-2);
+            border: var(--vault-name-border) !important;
+            border-radius: var(--editor-border-radius);
+        }
+
+
+body {
+    --vault-profile-font-size: 15px;
+    --vault-workspace-briefcase-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%22Capa_1%22%20enable-background%3D%22new%200%200%20510%20510%22%20height%3D%22512%22%20viewBox%3D%220%200%20510%20510%22%20width%3D%22512%22%3E%3ClinearGradient%20id%3D%22lg1%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e6eeff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23bac8fa%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_1_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%229.5%22%20y2%3D%22105.334%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_2_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22362.861%22%20x2%3D%22339.861%22%20y1%3D%2285.581%22%20y2%3D%2264.581%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23a7b7f1%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a7b7f1%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22lg2%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fee45a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fea613%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_3_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22153.333%22%20x2%3D%22153.333%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%2295.333%22%20y2%3D%22116.043%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_4_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22356.667%22%20x2%3D%22356.667%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%2295.333%22%20y2%3D%22116.043%22%2F%3E%3ClinearGradient%20id%3D%22lg3%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%235a5a5a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23444%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_5_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22102.667%22%20x2%3D%22102.667%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22490.667%22%20y2%3D%22506.015%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_6_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22407.333%22%20x2%3D%22407.333%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22490.667%22%20y2%3D%22506.015%22%2F%3E%3ClinearGradient%20id%3D%22lg4%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c86d36%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23883f2e%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_7_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22181.855%22%20x2%3D%22399.855%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22217.382%22%20y2%3D%22499.382%22%2F%3E%3ClinearGradient%20id%3D%22lg5%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23883f2e%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%236d3326%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_8_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22260.171%22%20x2%3D%22260.171%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22442.5%22%20y2%3D%22336.867%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_9_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22153.565%22%20x2%3D%22405.565%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22159.564%22%20y2%3D%22311.563%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_10_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22244%22%20y2%3D%22364.067%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_11_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22435%22%20y2%3D%22496.4%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_12_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22520.569%22%20x2%3D%22405.569%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22414.311%22%20y2%3D%22356.311%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_13_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22224.379%22%20x2%3D%2258.379%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22416.747%22%20y2%3D%22302.747%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_14_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22116%22%20x2%3D%22116%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22348.667%22%20y2%3D%22364.004%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_15_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22107.989%22%20x2%3D%22126.322%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22296.283%22%20y2%3D%22334.283%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_16_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22394%22%20x2%3D%22394%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22348.667%22%20y2%3D%22364.004%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_17_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22385.989%22%20x2%3D%22404.322%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22296.283%22%20y2%3D%22334.283%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_18_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22342.068%22%20x2%3D%22261.067%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22327.905%22%20y2%3D%22196.905%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_19_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22215.274%22%20y2%3D%22236.074%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_20_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%229.307%22%20y2%3D%2227.958%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m377.5%20105.334h-25c0-39.058-43.738-70.833-97.5-70.833s-97.5%2031.776-97.5%2070.833h-25c0-26.265%2013.201-50.73%2037.17-68.889%2022.935-17.376%2053.239-26.945%2085.33-26.945s62.395%209.569%2085.33%2026.944c23.97%2018.159%2037.17%2042.624%2037.17%2068.89z%22%20fill%3D%22url%28%23SVGID_1_%29%22%2F%3E%3Cpath%20d%3D%22m340.33%2036.444c-11.625-8.806-25.147-15.597-39.83-20.164v26.422c30.899%2011.896%2052%2035.505%2052%2062.631h25c0-26.265-13.2-50.73-37.17-68.889z%22%20fill%3D%22url%28%23SVGID_2_%29%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m176.913%2090.209-3.458-1.37c-12.926-5.119-27.316-5.119-40.242%200l-3.458%201.37c-6.088%202.411-10.087%208.296-10.087%2014.844v34.518c0%208.818%207.148%2015.966%2015.966%2015.966h35.401c8.818%200%2015.966-7.148%2015.966-15.966v-34.518c-.001-6.548-4-12.433-10.088-14.844z%22%20fill%3D%22url%28%23SVGID_3_%29%22%2F%3E%3Cpath%20d%3D%22m380.246%2090.209-3.458-1.37c-12.926-5.119-27.316-5.119-40.242%200l-3.458%201.37c-6.089%202.411-10.088%208.296-10.088%2014.845v34.518c0%208.818%207.148%2015.966%2015.966%2015.966h35.401c8.818%200%2015.966-7.148%2015.966-15.966v-34.518c0-6.549-3.998-12.434-10.087-14.845z%22%20fill%3D%22url%28%23SVGID_4_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m113.616%20510h-21.899c-6.84%200-12.384-5.545-12.384-12.384v-19.616h46.667v19.616c0%206.839-5.545%2012.384-12.384%2012.384z%22%20fill%3D%22url%28%23SVGID_5_%29%22%2F%3E%3Cpath%20d%3D%22m418.283%20510h-21.898c-6.839%200-12.384-5.545-12.384-12.384v-19.616h46.667v19.616c-.001%206.839-5.546%2012.384-12.385%2012.384z%22%20fill%3D%22url%28%23SVGID_6_%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m446.384%20495.005h-382.768c-30.03%200-54.373-24.344-54.373-54.373v-257.263c0-30.03%2024.344-54.373%2054.373-54.373h382.769c30.03%200%2054.373%2024.344%2054.373%2054.373v257.262c0%2030.03-24.344%2054.374-54.374%2054.374z%22%20fill%3D%22url%28%23SVGID_7_%29%22%2F%3E%3Cpath%20d%3D%22m500.758%20297.576c-13.611%2013.611-32.072%2021.258-51.321%2021.258h-429.854l176.171%20176.171h250.63c30.03%200%2054.373-24.344%2054.373-54.373v-143.056z%22%20fill%3D%22url%28%23SVGID_8_%29%22%2F%3E%3Cpath%20d%3D%22m464.759%20328.805-191.196%2016.585c-12.352%201.071-24.774%201.071-37.127%200l-191.195-16.585c-25.594-2.22-45.241-23.645-45.241-49.336v-114.704c0-30.03%2024.344-54.373%2054.373-54.373h401.253c30.03%200%2054.373%2024.344%2054.373%2054.373v114.705c.001%2025.69-19.646%2047.115-45.24%2049.335z%22%20fill%3D%22url%28%23SVGID_9_%29%22%2F%3E%3Cpath%20d%3D%22m0%20198.906v80.563c0%2025.691%2019.647%2047.116%2045.241%2049.336l191.195%2016.585c12.353%201.071%2024.775%201.071%2037.127%200l191.195-16.585c25.595-2.22%2045.242-23.645%2045.242-49.335v-80.563h-510z%22%20fill%3D%22url%28%23SVGID_10_%29%22%2F%3E%3Cpath%20d%3D%22m9.242%20369v71.631c0%2030.03%2024.344%2054.374%2054.373%2054.374h382.769c30.03%200%2054.373-24.344%2054.373-54.374v-71.631z%22%20fill%3D%22url%28%23SVGID_11_%29%22%2F%3E%3Cpath%20d%3D%22m500.76%20362.95v77.68c0%2014.46-5.65%2027.61-14.86%2037.35l-112.17-112.17c-4.27-1.99-7.23-6.31-7.23-11.34v-11.57c-3.23-2.96-5.17-7.19-5.17-11.75v-34.52c0-8.82%207.15-15.96%2015.97-15.96h35.4c5.96%200%2011.15%203.27%2013.89%208.11z%22%20fill%3D%22url%28%23SVGID_12_%29%22%2F%3E%3Cpath%20d%3D%22m354.81%20495h-129.9l-129.18-129.19c-4.27-1.99-7.23-6.31-7.23-11.34v-11.57c-3.23-2.96-5.17-7.19-5.17-11.75v-34.52c0-8.82%207.15-15.96%2015.97-15.96h35.4c5.96%200%2011.15%203.27%2013.89%208.11z%22%20fill%3D%22url%28%23SVGID_13_%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m131.975%20366h-31.949c-6.918%200-12.525-5.608-12.525-12.525v-20.475h57v20.475c-.001%206.917-5.609%2012.525-12.526%2012.525z%22%20fill%3D%22url%28%23SVGID_14_%29%22%2F%3E%3Cpath%20d%3D%22m139.579%20344.995-3.458%201.37c-12.926%205.119-27.316%205.119-40.242%200l-3.459-1.37c-6.088-2.411-10.087-8.296-10.087-14.844v-34.518c0-8.818%207.148-15.966%2015.966-15.966h35.401c8.818%200%2015.966%207.148%2015.966%2015.966v34.518c.001%206.548-3.998%2012.433-10.087%2014.844z%22%20fill%3D%22url%28%23SVGID_15_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m409.975%20366h-31.949c-6.918%200-12.525-5.608-12.525-12.525v-20.475h57v20.475c-.001%206.917-5.609%2012.525-12.526%2012.525z%22%20fill%3D%22url%28%23SVGID_16_%29%22%2F%3E%3Cpath%20d%3D%22m417.579%20344.995-3.458%201.37c-12.926%205.119-27.316%205.119-40.242%200l-3.458-1.37c-6.088-2.411-10.087-8.296-10.087-14.844v-34.518c0-8.818%207.148-15.966%2015.966-15.966h35.401c8.818%200%2015.966%207.148%2015.966%2015.966v34.518c0%206.548-3.999%2012.433-10.088%2014.844z%22%20fill%3D%22url%28%23SVGID_17_%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22m423.859%20332.353c-64.287-64.862-117.575-118.677-117.914-119.187-1.456-2.191-3.947-3.635-6.775-3.635h-86.34c-4.49%200-8.129%203.639-8.129%208.129v13.603c0%202.245.91%204.277%202.381%205.748.468.468%2045.123%2044.782%20105.776%20104.97z%22%20fill%3D%22url%28%23SVGID_18_%29%22%2F%3E%3Cpath%20d%3D%22m298.17%20237.861h-86.34c-4.49%200-8.129-3.639-8.129-8.129v-13.603c0-4.49%203.64-8.129%208.129-8.129h86.341c4.49%200%208.129%203.64%208.129%208.129v13.603c0%204.49-3.64%208.129-8.13%208.129z%22%20fill%3D%22url%28%23SVGID_19_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m316.37%2062.371c-40.65-17.548-82.129-17.53-122.739%200-6.54%202.823-14.155.332-17.684-5.856-3.56-6.241-7.119-12.481-10.679-18.722-4.104-7.195-1.039-16.314%206.532-19.676%2054.39-24.154%20112.001-24.157%20166.401%200%207.571%203.362%2010.636%2012.48%206.532%2019.676-3.56%206.241-7.119%2012.481-10.679%2018.722-3.53%206.187-11.144%208.679-17.684%205.856z%22%20fill%3D%22url%28%23SVGID_20_%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    --vault-workspace-vault-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%22Capa_1%22%20enable-background%3D%22new%200%200%20510%20510%22%20height%3D%22512%22%20viewBox%3D%220%200%20510%20490%22%20width%3D%22512%22%3E%3ClinearGradient%20id%3D%22lg1%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e1d3ce%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%239e9797%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_1_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2254.833%22%20x2%3D%2254.833%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22425.805%22%20y2%3D%22448.65%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_2_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22455.167%22%20x2%3D%22455.167%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22425.805%22%20y2%3D%22448.65%22%2F%3E%3ClinearGradient%20id%3D%22lg2%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23554e56%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23433f43%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_3_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22164.503%22%20x2%3D%22332.503%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%2281.059%22%20y2%3D%22381.059%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_4_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22382%22%20x2%3D%2261.312%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22369.66%22%20y2%3D%2248.972%22%2F%3E%3ClinearGradient%20id%3D%22lg3%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23433f43%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231a1a1a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_5_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22467%22%20x2%3D%22519%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22242.66%22%20y2%3D%22242.66%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_6_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22370.66%22%20y2%3D%22437.929%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_7_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22180%22%20x2%3D%22289.659%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22167.66%22%20y2%3D%22277.319%22%2F%3E%3ClinearGradient%20id%3D%22lg4%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23433f43%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.3007%22%20stop-color%3D%22%233c393c%22%20stop-opacity%3D%22.301%22%2F%3E%3Cstop%20offset%3D%22.7373%22%20stop-color%3D%22%23292729%22%20stop-opacity%3D%22.737%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231a1a1a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_8_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22252.669%22%20x2%3D%22148.15%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22315.3%22%20y2%3D%22253.718%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_9_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22441.451%22%20x2%3D%22394.117%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22352.76%22%20y2%3D%22272.093%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_10_%22%20gradientTransform%3D%22matrix%280%201%201%200%20401.307%20-401.307%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22547.379%22%20x2%3D%22650.444%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22-337.365%22%20y2%3D%22-234.3%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_11_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22160.53%22%20x2%3D%22160.53%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22334.119%22%20y2%3D%22375.667%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_12_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22226.5%22%20x2%3D%22267.549%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22242.66%22%20y2%3D%22242.66%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_13_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22125.449%22%20x2%3D%22226.827%22%20y1%3D%22146.044%22%20y2%3D%22276.526%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23bbec6c%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2378a91f%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22lg5%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2378a91f%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23026841%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_14_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22114.467%22%20x2%3D%2277.186%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22191.197%22%20y2%3D%22191.197%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_15_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22160.53%22%20x2%3D%22160.53%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22164.869%22%20y2%3D%22137.194%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_16_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22122.443%22%20x2%3D%22127.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22249.667%22%20y2%3D%22264.167%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_17_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22157.443%22%20x2%3D%22162.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22249.667%22%20y2%3D%22264.167%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_18_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22192.443%22%20x2%3D%22197.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22249.667%22%20y2%3D%22264.167%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_19_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22122.443%22%20x2%3D%22127.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22283.92%22%20y2%3D%22298.42%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_20_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22157.443%22%20x2%3D%22162.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22283.92%22%20y2%3D%22298.42%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_21_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22192.443%22%20x2%3D%22197.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22283.92%22%20y2%3D%22298.42%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_22_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22122.443%22%20x2%3D%22127.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22318.173%22%20y2%3D%22332.673%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_23_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22157.443%22%20x2%3D%22162.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22318.173%22%20y2%3D%22332.673%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_24_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22192.443%22%20x2%3D%22197.943%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22318.173%22%20y2%3D%22332.673%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_25_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22112.213%22%20x2%3D%22146.88%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22135.043%22%20y2%3D%22243.043%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_26_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22140.216%22%20x2%3D%22174.882%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22126.055%22%20y2%3D%22234.055%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_27_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22168.218%22%20x2%3D%22202.885%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22117.066%22%20y2%3D%22225.066%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_28_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22310.268%22%20x2%3D%22357.897%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22216.904%22%20y2%3D%22264.533%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_29_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22355.012%22%20x2%3D%22304.763%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22261.648%22%20y2%3D%22211.399%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_30_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22354.252%22%20x2%3D%22354.252%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22297.66%22%20y2%3D%22249.212%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_31_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22379.851%22%20x2%3D%22379.851%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22219.206%22%20y2%3D%22263.206%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m496.192%20441.277h-482.384c-7.626%200-13.808-6.183-13.808-13.809v-369.616c0-7.626%206.182-13.808%2013.808-13.808h482.384c7.626%200%2013.808%206.182%2013.808%2013.808v369.616c0%207.626-6.182%2013.809-13.808%2013.809z%22%20fill%3D%22url%28%23SVGID_3_%29%22%2F%3E%3Cpath%20d%3D%22m25%20409.469v-333.617c0-3.76%203.048-6.808%206.808-6.808h446.384c3.76%200%206.808%203.048%206.808%206.808v333.616c0%203.76-3.048%206.808-6.808%206.808h-446.384c-3.76.001-6.808-3.047-6.808-6.807z%22%20fill%3D%22url%28%23SVGID_4_%29%22%2F%3E%3Cpath%20d%3D%22m496.192%2044.044h-168.192v397.232h168.192c7.626%200%2013.808-6.182%2013.808-13.808v-369.616c0-7.626-6.182-13.808-13.808-13.808z%22%20fill%3D%22url%28%23SVGID_5_%29%22%2F%3E%3Cpath%20d%3D%22m0%20205.66v221.808c0%207.626%206.182%2013.808%2013.808%2013.808h482.384c7.626%200%2013.808-6.182%2013.808-13.808v-221.808z%22%20fill%3D%22url%28%23SVGID_6_%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m40%20389.969v-294.617c0-6.245%205.063-11.308%2011.308-11.308h407.384c6.245%200%2011.308%205.063%2011.308%2011.308v294.616c0%206.245-5.063%2011.308-11.308%2011.308h-407.384c-6.245.001-11.308-5.062-11.308-11.307z%22%20fill%3D%22url%28%23SVGID_7_%29%22%2F%3E%3Cpath%20d%3D%22m510%20427.469v-27.309l-266.5-266.5-164%20219.75%2087.866%2087.866h328.826c7.626.001%2013.808-6.181%2013.808-13.807z%22%20fill%3D%22url%28%23SVGID_8_%29%22%2F%3E%3Cpath%20d%3D%22m510%20427.469v-138.41l-68.524-68.524h-45.517l-18.905-18.905-82.059%2082.06%20157.586%20157.586h43.61c7.627.001%2013.809-6.181%2013.809-13.807z%22%20fill%3D%22url%28%23SVGID_9_%29%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m250.922%20332.515v-179.709c0-16.019-12.986-29.004-29.004-29.004h-122.776c-16.019%200-29.004%2012.986-29.004%2029.004v179.709c0%2016.019%2012.986%2029.004%2029.004%2029.004h122.776c16.019%200%2029.004-12.986%2029.004-29.004z%22%20fill%3D%22url%28%23SVGID_10_%29%22%2F%3E%3Cpath%20d%3D%22m70.138%20332.515v-99.588h180.785v99.588c0%2016.019-12.986%2029.004-29.004%2029.004h-122.777c-16.018%200-29.004-12.986-29.004-29.004z%22%20fill%3D%22url%28%23SVGID_11_%29%22%2F%3E%3Cpath%20d%3D%22m134.851%20123.802h87.067c16.019%200%2029.004%2012.986%2029.004%2029.004v179.709c0%2016.019-12.986%2029.004-29.004%2029.004h-87.067z%22%20fill%3D%22url%28%23SVGID_12_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m215.242%20232.999h-109.424c-4.356%200-7.887-3.531-7.887-7.887v-67.829c0-4.356%203.531-7.887%207.887-7.887h109.425c4.356%200%207.887%203.531%207.887%207.887v67.829c0%204.355-3.532%207.887-7.888%207.887z%22%20fill%3D%22url%28%23SVGID_13_%29%22%2F%3E%3Cpath%20d%3D%22m215.242%20232.999h-109.424c-4.356%200-7.887-3.531-7.887-7.887v-67.829c0-4.356%203.531-7.887%207.887-7.887h109.425c4.356%200%207.887%203.531%207.887%207.887v67.829c0%204.355-3.532%207.887-7.888%207.887z%22%20fill%3D%22url%28%23SVGID_14_%29%22%2F%3E%3Cpath%20d%3D%22m215.242%20232.999h-109.424c-4.356%200-7.887-3.531-7.887-7.887v-67.829c0-4.356%203.531-7.887%207.887-7.887h109.425c4.356%200%207.887%203.531%207.887%207.887v67.829c0%204.355-3.532%207.887-7.888%207.887z%22%20fill%3D%22url%28%23SVGID_15_%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m129.717%20248.19h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_16_%29%22%2F%3E%3Cpath%20d%3D%22m164.717%20248.19h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_17_%29%22%2F%3E%3Cpath%20d%3D%22m199.717%20248.19h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_18_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m129.717%20282.443h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615%200-5.311-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_19_%29%22%2F%3E%3Cpath%20d%3D%22m164.717%20282.443h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615%200-5.311-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_20_%29%22%2F%3E%3Cpath%20d%3D%22m199.717%20282.443h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615%200-5.311-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_21_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m129.717%20316.695h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_22_%29%22%2F%3E%3Cpath%20d%3D%22m164.717%20316.695h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_23_%29%22%2F%3E%3Cpath%20d%3D%22m199.717%20316.695h-8.374c-5.311%200-9.615%204.305-9.615%209.615s4.305%209.615%209.615%209.615h8.374c5.31%200%209.615-4.305%209.615-9.615s-4.305-9.615-9.615-9.615z%22%20fill%3D%22url%28%23SVGID_24_%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m138.998%20185.698c-.273%200-.547.055-.821.164l-5.799%201.969.219-5.69c-.055-1.805-1.368-2.626-2.9-2.626s-2.9.821-2.954%202.626l.273%205.581-5.744-1.86c-.383-.164-.657-.164-.821-.164-1.751%200-3.009%201.587-3.009%203.01%200%201.422.602%202.517%201.86%202.79l5.69%201.641-3.611%205.143c-.383.438-.656%201.039-.656%201.751%200%201.805%202.134%202.845%203.447%202.845.766%200%201.422-.164%201.915-.985l3.611-5.525%203.556%205.471c.602.93%201.478%201.04%202.079%201.04%201.586%200%203.337-1.204%203.337-2.955%200-.602-.164-1.258-.438-1.586l-3.83-5.526%205.581-1.313c1.313-.273%201.86-1.313%201.86-2.407%200-1.588-1.149-3.394-2.845-3.394z%22%20fill%3D%22url%28%23SVGID_25_%29%22%2F%3E%3Cpath%20d%3D%22m169.886%20185.698c-.273%200-.547.055-.821.164l-5.8%201.969.219-5.69c-.055-1.805-1.368-2.626-2.9-2.626s-2.9.821-2.954%202.626l.273%205.581-5.744-1.86c-.383-.164-.657-.164-.821-.164-1.751%200-3.01%201.587-3.01%203.01%200%201.422.602%202.517%201.861%202.79l5.69%201.641-3.611%205.143c-.383.438-.656%201.039-.656%201.751%200%201.805%202.134%202.845%203.447%202.845.766%200%201.422-.164%201.915-.985l3.611-5.525%203.556%205.471c.602.93%201.477%201.04%202.079%201.04%201.587%200%203.337-1.204%203.337-2.955%200-.602-.164-1.258-.438-1.586l-3.83-5.526%205.581-1.313c1.313-.273%201.86-1.313%201.86-2.407.001-1.588-1.148-3.394-2.844-3.394z%22%20fill%3D%22url%28%23SVGID_26_%29%22%2F%3E%3Cpath%20d%3D%22m200.773%20185.698c-.273%200-.547.055-.82.164l-5.799%201.969.219-5.69c-.055-1.805-1.368-2.626-2.9-2.626s-2.9.821-2.954%202.626l.273%205.581-5.744-1.86c-.383-.164-.657-.164-.821-.164-1.751%200-3.009%201.587-3.009%203.01%200%201.422.602%202.517%201.86%202.79l5.69%201.641-3.611%205.143c-.383.438-.656%201.039-.656%201.751%200%201.805%202.134%202.845%203.447%202.845.766%200%201.422-.164%201.915-.985l3.611-5.525%203.556%205.471c.602.93%201.478%201.04%202.079%201.04%201.587%200%203.337-1.204%203.337-2.955%200-.602-.164-1.258-.438-1.586l-3.83-5.526%205.581-1.313c1.313-.273%201.86-1.313%201.86-2.407-.001-1.588-1.149-3.394-2.846-3.394z%22%20fill%3D%22url%28%23SVGID_27_%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Ccircle%20cx%3D%22336.025%22%20cy%3D%22242.66%22%20fill%3D%22url%28%23SVGID_28_%29%22%20r%3D%2258.025%22%2F%3E%3Ccircle%20cx%3D%22336.025%22%20cy%3D%22242.66%22%20fill%3D%22url%28%23SVGID_29_%29%22%20r%3D%2238.614%22%2F%3E%3Cpath%20d%3D%22m351.884%20298.473c9.216-2.61%2017.916-7.529%2025.17-14.783%205.281-5.281%209.315-11.333%2012.134-17.786h-69.874z%22%20fill%3D%22url%28%23SVGID_30_%29%22%2F%3E%3Cpath%20d%3D%22m425%20272.115h-90.298c-12.253%200-22.186-9.933-22.186-22.186v-14.537c0-12.253%209.933-22.186%2022.186-22.186h90.298c12.253%200%2022.186%209.933%2022.186%2022.186v14.537c0%2012.253-9.933%2022.186-22.186%2022.186z%22%20fill%3D%22url%28%23SVGID_31_%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    --vault-workspace-hat-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%22Capa_1%22%20enable-background%3D%22new%200%200%20510%20510%22%20height%3D%22512%22%20viewBox%3D%220%200%20510%20510%22%20width%3D%22512%22%3E%3ClinearGradient%20id%3D%22lg1%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff7044%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f92814%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_1_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22310.719%22%20x2%3D%22284.385%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22432.735%22%20y2%3D%22411.668%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_2_%22%20gradientTransform%3D%22matrix%28.707%20.707%20-.707%20.707%20390.524%20-27.716%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22194.928%22%20x2%3D%22247.036%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22391.313%22%20y2%3D%22459.095%22%2F%3E%3ClinearGradient%20id%3D%22lg2%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f9f7fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f0ddfc%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_3_%22%20gradientTransform%3D%22matrix%280%201%20-1%200%20541.813%2031.813%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22277.956%22%20x2%3D%22367.869%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22286.813%22%20y2%3D%22286.813%22%2F%3E%3ClinearGradient%20id%3D%22lg3%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f0ddfc%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.2889%22%20stop-color%3D%22%23c8b7e0%22%20stop-opacity%3D%22.289%22%2F%3E%3Cstop%20offset%3D%22.5915%22%20stop-color%3D%22%23a595c8%22%20stop-opacity%3D%22.592%22%2F%3E%3Cstop%20offset%3D%22.8395%22%20stop-color%3D%22%238f81b8%22%20stop-opacity%3D%22.84%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238779b3%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_4_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22290.443%22%20x2%3D%22262.443%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22353.593%22%20y2%3D%22212.593%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_5_%22%20gradientTransform%3D%22matrix%280%201%20-1%200%20541.813%2031.813%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22311.705%22%20x2%3D%22311.705%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22541.73%22%20y2%3D%22442.796%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_6_%22%20gradientTransform%3D%22matrix%280%201%20-1%200%20541.813%2031.813%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22363.169%22%20x2%3D%22271.189%22%20xlink%3Ahref%3D%22%23lg3%22%20y1%3D%22532.193%22%20y2%3D%22440.213%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_7_%22%20gradientTransform%3D%22matrix%280%201%20-1%200%20541.813%2031.813%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22290.538%22%20x2%3D%22350.683%22%20xlink%3Ahref%3D%22%23lg2%22%20y1%3D%22484.285%22%20y2%3D%22409.735%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_8_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22278.185%22%20x2%3D%22278.185%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22345.305%22%20y2%3D%22406.786%22%2F%3E%3ClinearGradient%20id%3D%22lg4%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f92814%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c1272d%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_9_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22278.185%22%20x2%3D%22278.185%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22329.643%22%20y2%3D%22290.504%22%2F%3E%3ClinearGradient%20id%3D%22lg5%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e8595%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23555a66%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_10_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22169.44%22%20x2%3D%22406.328%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%22220.132%22%20y2%3D%22220.132%22%2F%3E%3ClinearGradient%20id%3D%22lg6%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23555a66%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23555a66%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_11_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22152.3%22%20x2%3D%2297.125%22%20xlink%3Ahref%3D%22%23lg6%22%20y1%3D%22220.132%22%20y2%3D%22220.132%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_12_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22282.734%22%20x2%3D%22237.374%22%20xlink%3Ahref%3D%22%23lg6%22%20y1%3D%22291.951%22%20y2%3D%2264.226%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_13_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%2287.027%22%20y2%3D%22191.098%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_14_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22197.706%22%20x2%3D%22319.045%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%2242.019%22%20y2%3D%22207.141%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_15_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22254.619%22%20x2%3D%22229.52%22%20y1%3D%22123.444%22%20y2%3D%22-131.228%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23bec3d2%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.5577%22%20stop-color%3D%22%23d4d9e4%22%20stop-opacity%3D%22.558%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e9edf5%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_16_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22220.554%22%20x2%3D%22196.279%22%20xlink%3Ahref%3D%22%23lg6%22%20y1%3D%22166.144%22%20y2%3D%22103.028%22%2F%3E%3ClinearGradient%20id%3D%22lg7%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffda45%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffa425%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_17_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22142.643%22%20x2%3D%22182.017%22%20xlink%3Ahref%3D%22%23lg7%22%20y1%3D%22114.727%22%20y2%3D%22168.307%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_18_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22245.199%22%20x2%3D%22263.653%22%20xlink%3Ahref%3D%22%23lg5%22%20y1%3D%2293.81%22%20y2%3D%22112.264%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_19_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2287.511%22%20x2%3D%22136.234%22%20xlink%3Ahref%3D%22%23lg7%22%20y1%3D%22269.087%22%20y2%3D%22267.967%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_20_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22106.168%22%20x2%3D%2273.345%22%20y1%3D%22266.473%22%20y2%3D%22281.545%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffda45%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fcee21%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_21_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2286.694%22%20x2%3D%22143.918%22%20y1%3D%22273.474%22%20y2%3D%22251.236%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffda45%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23b53759%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_22_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2290.463%22%20x2%3D%22112.719%22%20xlink%3Ahref%3D%22%23lg1%22%20y1%3D%22215.378%22%20y2%3D%22237.633%22%2F%3E%3ClinearGradient%20id%3D%22SVGID_23_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2298.605%22%20x2%3D%2283.054%22%20y1%3D%22223.519%22%20y2%3D%22207.968%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff7044%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffa425%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22SVGID_24_%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2297.49%22%20x2%3D%22121.11%22%20xlink%3Ahref%3D%22%23lg4%22%20y1%3D%22228.393%22%20y2%3D%22184.462%22%2F%3E%3Cpath%20d%3D%22m254.098%20379.471c8.799-8.738%2023.078-8.54%2031.846.228l47.45%2047.45c.643.643.297%201.743-.598%201.903l-22.246%203.976c-1.534.274-2.734%201.475-3.008%203.008l-3.976%2022.245c-.16.895-1.26%201.24-1.903.598l-47.622-47.622c-8.78-8.781-8.761-23.029.057-31.786z%22%20fill%3D%22url%28%23SVGID_1_%29%22%2F%3E%3Cpath%20d%3D%22m284.82%20379.471c-8.799-8.738-23.078-8.54-31.846.228l-47.45%2047.45c-.643.643-.297%201.743.598%201.903l22.245%203.976c1.534.274%202.734%201.475%203.008%203.008l3.976%2022.245c.16.895%201.26%201.24%201.903.598l47.622-47.622c8.781-8.781%208.762-23.029-.056-31.786z%22%20fill%3D%22url%28%23SVGID_2_%29%22%2F%3E%3Cpath%20d%3D%22m459.242%20407.535c15.471-.649%2027.926-29.051%2027.926-64.017s-12.455-63.368-27.926-64.017v-.033h-407.953c-15.712%200-28.456%2028.675-28.456%2064.05s12.744%2064.05%2028.456%2064.05h407.953z%22%20fill%3D%22url%28%23SVGID_3_%29%22%2F%3E%3Cpath%20d%3D%22m459.242%20279.501v-.033h-377.577c-1.542%2011.563-2.427%2021.334-2.427%2024.595%200%202.166%201.755%203.845%204.47%205.046l98.459%2098.459h277.075v-.032c15.471-.649%2027.926-29.051%2027.926-64.017%200-34.967-12.455-63.369-27.926-64.018z%22%20fill%3D%22url%28%23SVGID_4_%29%22%2F%3E%3Cpath%20d%3D%22m51.289%20407.568c-15.712%200-28.456-28.675-28.456-64.05s12.744-64.05%2028.456-64.05c15.725%200%2028.469%2028.675%2028.469%2064.05s-12.745%2064.05-28.469%2064.05z%22%20fill%3D%22url%28%23SVGID_5_%29%22%2F%3E%3Cpath%20d%3D%22m51.289%20407.568c-15.712%200-28.456-28.675-28.456-64.05%200-4.027.169-7.965.482-11.789.169-1.044.364-2.053.586-3.044.273-1.204.573-2.372.898-3.496.221-.743.456-1.469.703-2.168.13-.354.247-.699.377-1.036%201.796-4.761%204.192-8.355%206.912-10.213%201.159-.796%202.395-1.283%203.658-1.407.208-.018.43-.026.638-.026h38.558c2.603%209.682%204.113%2021.037%204.113%2033.18%200%20.283%200%20.575-.013.859-.196%2034.975-12.862%2063.19-28.456%2063.19z%22%20fill%3D%22url%28%23SVGID_6_%29%22%2F%3E%3Cpath%20d%3D%22m79.745%20344.377h-27.923c0-.283.013-.566.013-.859%200-18.32-6.6-33.18-14.749-33.18h38.558c2.603%209.682%204.113%2021.037%204.113%2033.18.001.283.001.575-.012.859z%22%20fill%3D%22url%28%23SVGID_7_%29%22%2F%3E%3Cpath%20d%3D%22m284.994%20279.501v-.033h-41.543v.033c15.471.649%2027.926%2029.051%2027.926%2064.017s-12.455%2063.368-27.926%2064.017v.032h41.543v-.032c15.471-.649%2027.926-29.051%2027.926-64.017-.001-34.966-12.455-63.368-27.926-64.017z%22%20fill%3D%22url%28%23SVGID_8_%29%22%2F%3E%3Cpath%20d%3D%22m284.994%20279.501v-.033h-41.543v.033c15.471.649%2027.926%2029.051%2027.926%2064.017s-12.455%2063.368-27.926%2064.017v.032h41.543v-.032c15.471-.649%2027.926-29.051%2027.926-64.017-.001-34.966-12.455-63.368-27.926-64.017z%22%20fill%3D%22url%28%23SVGID_9_%29%22%2F%3E%3Cpath%20d%3D%22m93.852%20135.077h322.296c8.029%200%2014.538%206.509%2014.538%2014.538v80.14c0%2021.418-13.117%2040.65-33.056%2048.469-91.688%2035.953-193.571%2035.953-285.259%200-19.939-7.819-33.056-27.051-33.056-48.469v-80.14c-.001-8.029%206.508-14.538%2014.537-14.538z%22%20fill%3D%22url%28%23SVGID_10_%29%22%2F%3E%3Cpath%20d%3D%22m416.148%20135.077h-319.255v133.675c4.484%203.966%209.691%207.202%2015.478%209.471%2091.688%2035.953%20193.571%2035.953%20285.259%200%2019.94-7.819%2033.056-27.051%2033.056-48.469v-80.14c0-8.028-6.509-14.537-14.538-14.537z%22%20fill%3D%22url%28%23SVGID_11_%29%22%2F%3E%3Cpath%20d%3D%22m416.148%20135.077h-322.296c-8.029%200-14.538%206.509-14.538%2014.538v7.653l146.839%20146.838c57.895%204.285%20116.517-4.332%20171.477-25.883%2019.94-7.819%2033.056-27.051%2033.056-48.469v-80.14c0-8.028-6.509-14.537-14.538-14.537z%22%20fill%3D%22url%28%23SVGID_12_%29%22%2F%3E%3Cpath%20d%3D%22m509.991%20120.112c.051-1.639-.886-3.307-2.826-3.834l-231.022-62.671c-13.845-3.756-28.44-3.756-42.285%200l-231.022%2062.672c-1.94.526-2.878%202.195-2.827%203.834v12.575c-.051%201.639.886%203.307%202.827%203.834l231.021%2062.671c13.845%203.756%2028.44%203.756%2042.285%200l231.022-62.671c1.94-.526%202.878-2.195%202.826-3.834v-12.576z%22%20fill%3D%22url%28%23SVGID_13_%29%22%2F%3E%3Cpath%20d%3D%22m233.857%2053.607-231.021%2062.672c-3.781%201.026-3.781%206.39%200%207.416l231.021%2062.671c13.845%203.756%2028.44%203.756%2042.285%200l231.021-62.671c3.781-1.026%203.781-6.39%200-7.416l-231.02-62.672c-13.845-3.755-28.441-3.755-42.286%200z%22%20fill%3D%22url%28%23SVGID_14_%29%22%2F%3E%3Cpath%20d%3D%22m236.096%2067.964-206.557%2056.035c-3.381.917-3.381%205.713%200%206.631l206.558%2056.035c12.379%203.358%2025.429%203.358%2037.807%200l206.558-56.035c3.381-.917%203.381-5.713%200-6.631l-206.558-56.035c-12.379-3.358-25.429-3.358-37.808%200z%22%20fill%3D%22url%28%23SVGID_15_%29%22%2F%3E%3Cpath%20d%3D%22m255%2088.772c-8.738%200-15.974%206.356-17.384%2014.692l-119.281%2032.359c-12.641%203.43-22.428%2012.928-26.564%2024.824l142.087%2038.545c13.845%203.756%2028.44%203.756%2042.285%200l75.876-20.584-83.351-83.351c-3.238-3.956-8.157-6.485-13.668-6.485z%22%20fill%3D%22url%28%23SVGID_16_%29%22%2F%3E%3Cpath%20d%3D%22m96.449%20221.807c-3.772%200-6.83-3.058-6.83-6.83v-41.611c0-17.518%2011.809-32.956%2028.716-37.543l135.681-36.808c3.639-.979%207.392%201.164%208.38%204.803.987%203.64-1.163%207.392-4.803%208.381l-135.682%2036.808c-10.971%202.976-18.633%2012.992-18.633%2024.359v41.611c0%203.772-3.057%206.83-6.829%206.83z%22%20fill%3D%22url%28%23SVGID_17_%29%22%2F%3E%3Cpath%20d%3D%22m272.652%20106.424c0%209.749-35.303%209.749-35.303%200s7.903-17.652%2017.652-17.652c9.748%200%2017.651%207.903%2017.651%2017.652z%22%20fill%3D%22url%28%23SVGID_18_%29%22%2F%3E%3Cpath%20d%3D%22m114.547%20304.068c0%209.749-35.303%209.749-35.303%200s7.903-77.716%2017.652-77.716c9.748%200%2017.651%2067.967%2017.651%2077.716z%22%20fill%3D%22url%28%23SVGID_19_%29%22%2F%3E%3Cpath%20d%3D%22m114.541%20304.063c0%203.254-3.949%205.427-9.214%206.507-5.19%201.068-11.66%201.068-16.863%200-.807-1.08-1.279-2.397-1.279-3.974%200-9.996%204.284-79.149%209.586-80.229.037-.012.087-.012.124-.012s.087%200%20.124.012c9.699.572%2017.522%2067.986%2017.522%2077.696z%22%20fill%3D%22url%28%23SVGID_20_%29%22%2F%3E%3Cpath%20d%3D%22m108.718%20304.063c0%204.644-5.364%207.078-11.002%207.302-.546.012-1.105.012-1.664%200-8.531-.149-16.813-2.583-16.813-7.302%200-9.698%207.823-77.001%2017.509-77.696.05-.012.099-.012.149-.012s.099%200%20.149.012c6.469%201.043%2011.672%2068.023%2011.672%2077.696z%22%20fill%3D%22url%28%23SVGID_21_%29%22%2F%3E%3Ccircle%20cx%3D%2296.893%22%20cy%3D%22221.807%22%20fill%3D%22url%28%23SVGID_22_%29%22%20r%3D%2217.184%22%2F%3E%3Ccircle%20cx%3D%2296.893%22%20cy%3D%22221.807%22%20fill%3D%22url%28%23SVGID_23_%29%22%20r%3D%2214.341%22%2F%3E%3Cpath%20d%3D%22m104.58%20206.435c1.159%202.313%201.812%204.923%201.812%207.687%200%209.49-7.693%2017.184-17.184%2017.184-2.763%200-5.374-.653-7.687-1.812%202.821%205.631%208.645%209.497%2015.372%209.497%209.49%200%2017.184-7.693%2017.184-17.184%200-6.727-3.866-12.55-9.497-15.372z%22%20fill%3D%22url%28%23SVGID_24_%29%22%2F%3E%3C%2Fsvg%3E');
+    --vault-workspace-book-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%221b0cde2c-cb72-44be-86fe-aec6f1ed1959%22%20enable-background%3D%22new%200%200%20510%20510%22%20height%3D%22512%22%20viewBox%3D%220%200%20510%20510%22%20width%3D%22512%22%3E%3ClinearGradient%20id%3D%225c9f79a7-394c-485d-8648-22ab48c95d9f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2279.429%22%20x2%3D%22426.548%22%20y1%3D%2295.045%22%20y2%3D%22442.164%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f7e07d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e69642%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22c995612c-ae94-483b-b975-00f899afd884%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d52c1c%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23d12c1e%22%20stop-opacity%3D%22.28%22%2F%3E%3Cstop%20offset%3D%22.5735%22%20stop-color%3D%22%23c42c23%22%20stop-opacity%3D%22.574%22%2F%3E%3Cstop%20offset%3D%22.8721%22%20stop-color%3D%22%23af2b2c%22%20stop-opacity%3D%22.872%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a42b31%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2298f5d967-5b2d-4b57-a037-87f503b04eaf%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22512.968%22%20x2%3D%22471.917%22%20xlink%3Ahref%3D%22%23c995612c-ae94-483b-b975-00f899afd884%22%20y1%3D%22263.488%22%20y2%3D%22259.181%22%2F%3E%3ClinearGradient%20id%3D%22b59b0530-4d65-41e0-8283-eefdbf482759%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23c995612c-ae94-483b-b975-00f899afd884%22%20y1%3D%22381.642%22%20y2%3D%22470.332%22%2F%3E%3ClinearGradient%20id%3D%22ade91dde-5982-4336-b738-2675a3e9daa8%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22405.75%22%20x2%3D%22405.75%22%20xlink%3Ahref%3D%22%23c995612c-ae94-483b-b975-00f899afd884%22%20y1%3D%22366.116%22%20y2%3D%22447.267%22%2F%3E%3ClinearGradient%20id%3D%222bd59034-12fd-4172-bcb0-95314cdae49e%22%20gradientTransform%3D%22matrix%28-1%200%200%201%20811.5%200%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22707.25%22%20x2%3D%22707.25%22%20xlink%3Ahref%3D%22%23c995612c-ae94-483b-b975-00f899afd884%22%20y1%3D%22366.116%22%20y2%3D%22447.267%22%2F%3E%3ClinearGradient%20id%3D%229b0c896e-0435-44f5-a058-9ac0e0a239be%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23eef4ff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23cfe7fd%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2292fab0b0-3fd0-4130-abb7-e24ed045598f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%239b0c896e-0435-44f5-a058-9ac0e0a239be%22%20y1%3D%22322.309%22%20y2%3D%22398.976%22%2F%3E%3ClinearGradient%20id%3D%22b84d9388-a222-4a25-90d9-34151ef9be74%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238aaadc%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238aaadc%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22140f792c-6b28-42ad-a6de-7ec12f53caf0%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23b84d9388-a222-4a25-90d9-34151ef9be74%22%20y1%3D%22342.976%22%20y2%3D%22473.979%22%2F%3E%3ClinearGradient%20id%3D%2276e76dc0-a7c7-42bd-a7d5-db4cc389b54e%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22315.5%22%20x2%3D%22243.998%22%20xlink%3Ahref%3D%22%23b84d9388-a222-4a25-90d9-34151ef9be74%22%20y1%3D%22366.157%22%20y2%3D%22366.157%22%2F%3E%3ClinearGradient%20id%3D%2259b7fb6e-a95f-4f95-8bf6-e74c02022e5e%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-31.679%22%20x2%3D%22272.735%22%20xlink%3Ahref%3D%22%239b0c896e-0435-44f5-a058-9ac0e0a239be%22%20y1%3D%2255.012%22%20y2%3D%22359.426%22%2F%3E%3ClinearGradient%20id%3D%22768b0d8c-9562-4b58-aa5f-7aa57cce6f54%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2262.28%22%20x2%3D%22285.008%22%20xlink%3Ahref%3D%22%239b0c896e-0435-44f5-a058-9ac0e0a239be%22%20y1%3D%22264.72%22%20y2%3D%22487.449%22%2F%3E%3ClinearGradient%20id%3D%2237a30124-8777-4c54-84a0-4de67fa6961f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22141.386%22%20x2%3D%22364.115%22%20xlink%3Ahref%3D%22%239b0c896e-0435-44f5-a058-9ac0e0a239be%22%20y1%3D%22185.614%22%20y2%3D%22408.342%22%2F%3E%3ClinearGradient%20id%3D%22ee03f5a9-a2b2-45ca-b035-e7ce0b2b7c36%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22251.389%22%20x2%3D%22474.295%22%20xlink%3Ahref%3D%22%239b0c896e-0435-44f5-a058-9ac0e0a239be%22%20y1%3D%22119.827%22%20y2%3D%22342.733%22%2F%3E%3ClinearGradient%20id%3D%22292ade6e-dbe0-4545-a15f-58b0de095179%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22472.447%22%20x2%3D%22275.447%22%20xlink%3Ahref%3D%22%23b84d9388-a222-4a25-90d9-34151ef9be74%22%20y1%3D%22224.859%22%20y2%3D%2287.359%22%2F%3E%3ClinearGradient%20id%3D%2267fd5d59-c3be-4d9b-99a9-9247cc1d7ee9%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22280.629%22%20x2%3D%22361.43%22%20y1%3D%2273.68%22%20y2%3D%22154.482%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dc4955%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c4237c%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22c76e734d-b847-4004-acbb-5907b8cfa2ba%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22329%22%20x2%3D%22329%22%20y1%3D%22120.976%22%20y2%3D%22184.983%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238a1958%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238a1958%22%2F%3E%3C%2FlinearGradient%3E%3Cg%3E%3Cpath%20d%3D%22m493.075%2093.469c-78.521-26.395-160.012-24.347-238.075%206.149-78.118-30.517-159.673-32.548-238.25-6.09-10.025%203.375-16.75%2012.814-16.75%2023.392v307.314c0%2016.515%2015.832%2028.443%2031.695%2023.849%2058.393-16.908%20118.194-18.209%20176.805-3.932v.001c0%209.291%207.532%2016.822%2016.822%2016.822h59.355c9.291%200%2016.822-7.532%2016.822-16.822%2058.613-14.278%20118.414-12.978%20176.806%203.93%2015.864%204.595%2031.695-7.332%2031.695-23.847v-307.315c0-10.645-6.834-20.059-16.925-23.451z%22%20fill%3D%22url%28%235c9f79a7-394c-485d-8648-22ab48c95d9f%29%22%2F%3E%3Cpath%20d%3D%22m510%20116.916v307.32c0%205.47-1.74%2010.43-4.65%2014.46-2.96-4.13-7.2-7.35-12.27-9.05-10.32-3.471-20.69-6.448-31.095-8.933-14.856-3.548-25.315-16.852-25.315-32.125v-309.112c18.91%203.05%2037.75%207.72%2056.41%2013.99%2010.09%203.4%2016.92%2012.81%2016.92%2023.45z%22%20fill%3D%22url%28%2398f5d967-5b2d-4b57-a037-87f503b04eaf%29%22%2F%3E%3Cpath%20d%3D%22m0%20320.976v103.259c0%2016.515%2015.832%2028.443%2031.695%2023.849%2058.393-16.908%20118.194-18.209%20176.805-3.932v.001c0%209.291%207.532%2016.823%2016.823%2016.823h59.355c9.291%200%2016.823-7.532%2016.823-16.823%2058.613-14.278%20118.414-12.978%20176.806%203.93%2015.862%204.594%2031.693-7.333%2031.693-23.848v-103.26h-510z%22%20fill%3D%22url%28%23b59b0530-4d65-41e0-8283-eefdbf482759%29%22%2F%3E%3Cpath%20d%3D%22m478.306%20448.084c15.863%204.593%2031.694-7.334%2031.694-23.849v-103.26h-208.5v123.177c58.613-14.277%20118.414-12.977%20176.806%203.932z%22%20fill%3D%22url%28%23ade91dde-5982-4336-b738-2675a3e9daa8%29%22%2F%3E%3Cpath%20d%3D%22m31.694%20448.084c-15.863%204.593-31.694-7.334-31.694-23.849v-103.26h208.5v123.177c-58.613-14.277-118.414-12.977-176.806%203.932z%22%20fill%3D%22url%28%232bd59034-12fd-4172-bcb0-95314cdae49e%29%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m472.135%2096.157c-71.615-24.074-145.939-22.206-217.135%205.608-71.247-27.833-145.628-29.686-217.295-5.554-9.143%203.079-15.276%2011.687-15.276%2021.335v280.284c0%2015.063%2014.439%2025.941%2028.908%2021.752%2053.257-15.421%20103.798-16.608%20157.253-3.586v.001c0%208.474%206.869%2015.343%2015.343%2015.343h62.134c8.474%200%2015.343-6.869%2015.343-15.343%2053.457-13.022%20103.999-11.836%20157.255%203.585%2014.468%204.189%2028.906-6.688%2028.906-21.75v-280.287c0-9.709-6.233-18.294-15.436-21.388z%22%20fill%3D%22url%28%2392fab0b0-3fd0-4130-abb7-e24ed045598f%29%22%2F%3E%3Cpath%20d%3D%22m472.135%2096.157c-71.615-24.074-145.939-22.206-217.135%205.608-71.247-27.833-145.628-29.686-217.295-5.554-9.143%203.079-15.276%2011.687-15.276%2021.335v280.284c0%2015.063%2014.439%2025.941%2028.908%2021.752%2053.257-15.421%20103.798-16.608%20157.253-3.586v.001c0%208.474%206.869%2015.343%2015.343%2015.343h62.134c8.474%200%2015.343-6.869%2015.343-15.343%2053.457-13.022%20103.999-11.836%20157.255%203.585%2014.468%204.189%2028.906-6.688%2028.906-21.75v-280.287c0-9.709-6.233-18.294-15.436-21.388z%22%20fill%3D%22url%28%23140f792c-6b28-42ad-a6de-7ec12f53caf0%29%22%2F%3E%3Cpath%20d%3D%22m255%20300.976v130.363h31.067c8.474%200%2015.343-6.869%2015.343-15.343%2053.457-13.022%20103.999-11.837%20157.254%203.585%2014.468%204.189%2028.906-6.688%2028.906-21.75v-96.854h-232.57z%22%20fill%3D%22url%28%2376e76dc0-a7c7-42bd-a7d5-db4cc389b54e%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m37.865%2067.064c-9.203%203.094-15.436%2011.679-15.436%2021.388v280.284c0%2015.005%2014.365%2025.969%2028.777%2021.789%2067.473-19.567%20137.012-16.307%20203.794%209.784v-327.637c-71.194-27.813-145.518-29.683-217.135-5.608z%22%20fill%3D%22url%28%2359b7fb6e-a95f-4f95-8bf6-e74c02022e5e%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m213.493%20366.441c-49.767-8.972-98.494-8.974-148.266%200-8.204%201.627-14.807-3.456-14.807-11.722%200-9.503%200-14.254%200-23.757%200-8.266%206.603-16.584%2014.807-18.211%2049.772-8.973%2098.499-8.972%20148.266%200%208.204%201.627%2014.807%209.945%2014.807%2018.211v23.757c0%208.266-6.603%2013.35-14.807%2011.722z%22%20fill%3D%22url%28%23768b0d8c-9562-4b58-aa5f-7aa57cce6f54%29%22%2F%3E%3Cpath%20d%3D%22m213.493%20282.035c-49.767-8.972-98.494-8.973-148.266%200-8.204%201.627-14.807-3.456-14.807-11.722%200-57.123%200-114.247%200-171.37%200-8.266%206.603-16.584%2014.807-18.212%2049.773-8.974%2098.499-8.972%20148.266.001%208.204%201.627%2014.807%209.945%2014.807%2018.211v171.37c0%208.265-6.603%2013.349-14.807%2011.722z%22%20fill%3D%22url%28%2337a30124-8777-4c54-84a0-4de67fa6961f%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22m472.135%2067.064c-71.615-24.074-145.939-22.206-217.135%205.608v327.637c66.785-26.09%20136.324-29.352%20203.795-9.784%2014.411%204.179%2028.776-6.783%2028.776-21.788v-280.285c0-9.709-6.233-18.295-15.436-21.388z%22%20fill%3D%22url%28%23ee03f5a9-a2b2-45ca-b035-e7ce0b2b7c36%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m472.135%2067.064c-59.541-20.015-120.953-22.091-180.885-6.239-6.027%201.594-10.25%207.014-10.25%2013.248v116.403l196.866%20196.866c5.789-4.051%209.705-10.775%209.705-18.605v-280.285c0-9.709-6.233-18.295-15.436-21.388z%22%20fill%3D%22url%28%23292ade6e-dbe0-4545-a15f-58b0de095179%29%22%2F%3E%3Cpath%20d%3D%22m278%2074.136v110.202c0%206.823%208.249%2010.239%2013.073%205.415l24.866-24.866c7.213-7.213%2018.908-7.213%2026.121%200l24.866%2024.866c4.824%204.824%2013.073%201.408%2013.073-5.415v-122.456c0-7.203-5.916-12.96-13.118-12.857-26.193.376-52.37%204.103-78.261%2011.183-6.272%201.716-10.62%207.425-10.62%2013.928z%22%20fill%3D%22url%28%2367fd5d59-c3be-4d9b-99a9-9247cc1d7ee9%29%22%2F%3E%3Cpath%20d%3D%22m278%20112.976v71.362c0%206.823%208.249%2010.24%2013.073%205.415l24.866-24.866c7.213-7.213%2018.908-7.213%2026.121%200l24.866%2024.866c4.824%204.824%2013.073%201.407%2013.073-5.415v-71.362z%22%20fill%3D%22url%28%23c76e734d-b847-4004-acbb-5907b8cfa2ba%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    --vault-workspace-pin-board-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%22ccf61606-58d8-4190-b495-703661f95ccf%22%20enable-background%3D%22new%200%200%20512%20512%22%20viewBox%3D%220%200%20512%20512%22%3E%3ClinearGradient%20id%3D%22df9bba67-d283-4da7-b502-eb9231cb7daf%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f3faff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d5daf3%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22a565aa32-a9d5-480e-b51f-87d35015508f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22256%22%20x2%3D%22256%22%20xlink%3Ahref%3D%22%23df9bba67-d283-4da7-b502-eb9231cb7daf%22%20y1%3D%2257.891%22%20y2%3D%22156.413%22%2F%3E%3ClinearGradient%20id%3D%2206376662-06c5-4d88-9ec1-f990e3a4ef4d%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dbd5ef%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.2585%22%20stop-color%3D%22%23d9d2ec%22%20stop-opacity%3D%22.259%22%2F%3E%3Cstop%20offset%3D%22.4295%22%20stop-color%3D%22%23d2cae3%22%20stop-opacity%3D%22.43%22%2F%3E%3Cstop%20offset%3D%22.5751%22%20stop-color%3D%22%23c6bcd4%22%20stop-opacity%3D%22.575%22%2F%3E%3Cstop%20offset%3D%22.7065%22%20stop-color%3D%22%23b6a9bf%22%20stop-opacity%3D%22.707%22%2F%3E%3Cstop%20offset%3D%22.8283%22%20stop-color%3D%22%23a08fa4%22%20stop-opacity%3D%22.828%22%2F%3E%3Cstop%20offset%3D%22.9415%22%20stop-color%3D%22%23867082%22%20stop-opacity%3D%22.942%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23765d6e%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%222af4f214-dc11-439d-b58a-8b59d388e761%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22256%22%20x2%3D%22256%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%2294.248%22%20y2%3D%2233.222%22%2F%3E%3ClinearGradient%20id%3D%2293f498bd-8b61-49ef-a580-03ccc62c0b6d%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fe5694%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e41f2d%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%226e1d3a15-601f-4d63-8473-a1f11778c7d2%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22246.085%22%20x2%3D%22265.592%22%20xlink%3Ahref%3D%22%2393f498bd-8b61-49ef-a580-03ccc62c0b6d%22%20y1%3D%2215.836%22%20y2%3D%2235.343%22%2F%3E%3ClinearGradient%20id%3D%2211192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c41926%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.3626%22%20stop-color%3D%22%23bf1c27%22%20stop-opacity%3D%22.363%22%2F%3E%3Cstop%20offset%3D%22.8%22%20stop-color%3D%22%23b12529%22%20stop-opacity%3D%22.8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a72b2b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2283dd2cb3-fb12-47ba-b87e-221fe40b7268%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22256%22%20x2%3D%22256%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%2224.423%22%20y2%3D%2252.5%22%2F%3E%3ClinearGradient%20id%3D%2274f9ec8d-7799-4994-af02-e159852a9168%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22254.329%22%20x2%3D%22276.758%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%2224.309%22%20y2%3D%2243.656%22%2F%3E%3ClinearGradient%20id%3D%228df1c315-72cf-472f-878a-87a4d9665dea%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f89580%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c4573a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%224879522c-ea59-4347-9a33-78f3ff3d0c0a%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22203.556%22%20x2%3D%22312.591%22%20xlink%3Ahref%3D%22%238df1c315-72cf-472f-878a-87a4d9665dea%22%20y1%3D%22112.911%22%20y2%3D%22536.111%22%2F%3E%3ClinearGradient%20id%3D%22a3c6aa5f-28d1-42ca-a61e-47e0c4b8dc63%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22494.693%22%20x2%3D%2245.686%22%20xlink%3Ahref%3D%22%238df1c315-72cf-472f-878a-87a4d9665dea%22%20y1%3D%22555.156%22%20y2%3D%22106.149%22%2F%3E%3ClinearGradient%20id%3D%225a2f4194-1c36-4035-be7b-50e5cfc65998%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c4573a%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.235%22%20stop-color%3D%22%23be5539%22%20stop-opacity%3D%22.235%22%2F%3E%3Cstop%20offset%3D%22.539%22%20stop-color%3D%22%23ae4e35%22%20stop-opacity%3D%22.539%22%2F%3E%3Cstop%20offset%3D%22.8794%22%20stop-color%3D%22%23934330%22%20stop-opacity%3D%22.879%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23883f2e%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22056ea4cd-dfc5-4524-8ee9-ca9a2a68b8ed%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22256%22%20x2%3D%22256%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22469.259%22%20y2%3D%22511.481%22%2F%3E%3ClinearGradient%20id%3D%220c3fa3e9-0c12-4ec0-bbd8-91f32a39e21c%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22477.912%22%20x2%3D%22512.687%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22316.464%22%20y2%3D%22316.464%22%2F%3E%3ClinearGradient%20id%3D%2279dfd4ca-0302-4e52-8dbf-c07508285f9d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22424.252%22%20x2%3D%22399.54%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22320.017%22%20y2%3D%22284.848%22%2F%3E%3ClinearGradient%20id%3D%2273bd2d97-9061-403d-9e0e-71ed1f110dc9%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22221.096%22%20x2%3D%22289.221%22%20y1%3D%22185.06%22%20y2%3D%22441.531%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fedbbd%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffbf51%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%226ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fe9738%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.3208%22%20stop-color%3D%22%23fe9635%22%20stop-opacity%3D%22.321%22%2F%3E%3Cstop%20offset%3D%22.5597%22%20stop-color%3D%22%23fe902c%22%20stop-opacity%3D%22.56%22%2F%3E%3Cstop%20offset%3D%22.7719%22%20stop-color%3D%22%23fe871c%22%20stop-opacity%3D%22.772%22%2F%3E%3Cstop%20offset%3D%22.9676%22%20stop-color%3D%22%23fe7905%22%20stop-opacity%3D%22.968%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fe7701%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2200657de1-41d2-43c7-9e5c-2c0bb58dcf0e%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22256%22%20x2%3D%22256%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22207.594%22%20y2%3D%22158.785%22%2F%3E%3ClinearGradient%20id%3D%22eb0d547c-00b2-45e6-94d4-cd2c35fb5014%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22245.516%22%20x2%3D%22173.753%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22335.433%22%20y2%3D%22221.374%22%2F%3E%3ClinearGradient%20id%3D%22f6553559-216e-44bb-8542-066e8daeca6d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22281.428%22%20x2%3D%22199.21%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22406.773%22%20y2%3D%22370.654%22%2F%3E%3ClinearGradient%20id%3D%22df6e2872-4080-4567-a469-f030a83d3167%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22429.547%22%20x2%3D%22378.22%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22374.814%22%20y2%3D%22280.24%22%2F%3E%3ClinearGradient%20id%3D%2267e86e37-9eb0-4041-80aa-b6ad66273e08%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2273%22%20x2%3D%2230.014%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22316.464%22%20y2%3D%22316.464%22%2F%3E%3ClinearGradient%20id%3D%22cc43ad60-d2c2-4828-9ace-464175010e7d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22137.773%22%20x2%3D%22131%22%20xlink%3Ahref%3D%22%236ea3a591-5ee6-4349-a4e2-270027e4a3c4%22%20y1%3D%22415.916%22%20y2%3D%22375.995%22%2F%3E%3ClinearGradient%20id%3D%22450ff423-f77e-4b6d-9f3a-01ba413c66d4%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22320.889%22%20x2%3D%22438.899%22%20xlink%3Ahref%3D%22%23df9bba67-d283-4da7-b502-eb9231cb7daf%22%20y1%3D%22217.156%22%20y2%3D%22335.166%22%2F%3E%3ClinearGradient%20id%3D%2228ebb149-64f4-41f7-85fe-4b8cedc6e7b6%22%20gradientTransform%3D%22matrix%28-.989%20-.147%20.147%20-.989%20-1569.081%20326.511%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-1946.341%22%20x2%3D%22-1974.822%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22300.145%22%20y2%3D%22271.664%22%2F%3E%3ClinearGradient%20id%3D%2292923a1e-294c-42c2-9aca-4c01a74203b1%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22362.041%22%20x2%3D%22359.224%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22343.835%22%20y2%3D%22362.992%22%2F%3E%3ClinearGradient%20id%3D%22eb8992c4-d457-47c0-9526-9953f07ecdab%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22429.54%22%20x2%3D%22458.838%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22278.562%22%20y2%3D%22281.943%22%2F%3E%3ClinearGradient%20id%3D%22fa3495cc-125b-46db-8909-cac6a2264796%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22403.134%22%20x2%3D%22432.042%22%20xlink%3Ahref%3D%22%23df9bba67-d283-4da7-b502-eb9231cb7daf%22%20y1%3D%22325.914%22%20y2%3D%22354.823%22%2F%3E%3ClinearGradient%20id%3D%22478e4a24-e375-4d87-a758-f30db1f91c37%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22471.199%22%20x2%3D%22444.11%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22284.306%22%20y2%3D%22247.949%22%2F%3E%3ClinearGradient%20id%3D%22f1f6cbf5-f0ad-4de2-920a-e9237e047d6e%22%20gradientTransform%3D%22matrix%28.707%20.707%20-.707%20.707%20864.186%20586.603%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-538.797%22%20x2%3D%22-531.702%22%20xlink%3Ahref%3D%22%23df9bba67-d283-4da7-b502-eb9231cb7daf%22%20y1%3D%2245.829%22%20y2%3D%2245.829%22%2F%3E%3ClinearGradient%20id%3D%225cd614fb-ed21-4746-ac4c-c62f79fd67bf%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22448.894%22%20x2%3D%22457.056%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22236.124%22%20y2%3D%22244.286%22%2F%3E%3ClinearGradient%20id%3D%225e4811b9-7b16-4bd9-8f69-0109015bcf9c%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22456.968%22%20x2%3D%22467.642%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22235.868%22%20y2%3D%22225.194%22%2F%3E%3ClinearGradient%20id%3D%2291327e89-5867-47e9-91e8-5715efba24b9%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22473.682%22%20x2%3D%22489.099%22%20xlink%3Ahref%3D%22%2393f498bd-8b61-49ef-a580-03ccc62c0b6d%22%20y1%3D%22203.481%22%20y2%3D%22218.899%22%2F%3E%3ClinearGradient%20id%3D%229e7332a6-2bd2-494e-b9a2-69881b7a0072%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22481.518%22%20x2%3D%22481.518%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%22210.268%22%20y2%3D%22232.459%22%2F%3E%3ClinearGradient%20id%3D%22604ff983-07b2-4d91-b84b-508188b9655d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22480.197%22%20x2%3D%22497.925%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%22210.178%22%20y2%3D%22225.47%22%2F%3E%3ClinearGradient%20id%3D%22c646cd84-a221-4d52-b8cc-88ca5a4fea01%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2294.474%22%20x2%3D%22221.343%22%20y1%3D%22198.828%22%20y2%3D%22325.697%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c8effe%22%2F%3E%3Cstop%20offset%3D%22.1027%22%20stop-color%3D%22%23c0eefe%22%2F%3E%3Cstop%20offset%3D%22.2579%22%20stop-color%3D%22%23abebfd%22%2F%3E%3Cstop%20offset%3D%22.4463%22%20stop-color%3D%22%2389e6fd%22%2F%3E%3Cstop%20offset%3D%22.6607%22%20stop-color%3D%22%235adefc%22%2F%3E%3Cstop%20offset%3D%22.8941%22%20stop-color%3D%22%231ed5fb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2301d0fb%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%224f04f82c-bf7d-4ee3-b582-5639399c28b6%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230290cf%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.8724%22%20stop-color%3D%22%230290cf%22%20stop-opacity%3D%22.872%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230290cf%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2272e01f0f-9d82-47f6-97d7-ee9ace71b4ec%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22153.588%22%20x2%3D%22153.588%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22292.803%22%20y2%3D%22324.217%22%2F%3E%3ClinearGradient%20id%3D%22c83be454-6223-4a0b-8b0c-147ae288729d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22220.522%22%20x2%3D%22248.76%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22257.942%22%20y2%3D%22257.942%22%2F%3E%3ClinearGradient%20id%3D%226921e282-17fd-4275-a6d3-b77bd1bf8631%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22270.056%22%20x2%3D%22231.085%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22298.163%22%20y2%3D%22300.064%22%2F%3E%3ClinearGradient%20id%3D%2262e4f0ca-ae0e-454e-adc5-d54e404e7b9b%22%20gradientTransform%3D%22matrix%28.99%20-.139%20.139%20.99%20-31.885%20-29.372%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%229.505%22%20x2%3D%22162.06%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22168.704%22%20y2%3D%22373.298%22%2F%3E%3ClinearGradient%20id%3D%226b3d108a-a280-4411-b02c-34c71fb46a0f%22%20gradientTransform%3D%22matrix%28.99%20-.139%20.139%20.99%20-31.885%20-29.372%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2227.869%22%20x2%3D%22180.423%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22155.011%22%20y2%3D%22359.605%22%2F%3E%3ClinearGradient%20id%3D%227e0271eb-315f-4df4-a440-c91e222b22ba%22%20gradientTransform%3D%22matrix%28.99%20-.139%20.139%20.99%20-31.885%20-29.372%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2213.352%22%20x2%3D%22165.906%22%20xlink%3Ahref%3D%22%234f04f82c-bf7d-4ee3-b582-5639399c28b6%22%20y1%3D%22165.836%22%20y2%3D%22370.43%22%2F%3E%3ClinearGradient%20id%3D%22d1507831-4983-4a4e-bad2-0975a64f748b%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d7f8c4%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2324ce20%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2291a0495f-be64-49bf-b298-53f5da92c470%22%20gradientTransform%3D%22matrix%28.906%20-.423%20.423%20.906%20-233.738%20-542.323%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-39.275%22%20x2%3D%2274.655%22%20xlink%3Ahref%3D%22%23d1507831-4983-4a4e-bad2-0975a64f748b%22%20y1%3D%22959.406%22%20y2%3D%221073.335%22%2F%3E%3ClinearGradient%20id%3D%22e92365d4-6418-4adb-bfe1-ccf6c382c677%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2309a76d%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.3525%22%20stop-color%3D%22%2309a46b%22%20stop-opacity%3D%22.353%22%2F%3E%3Cstop%20offset%3D%22.6149%22%20stop-color%3D%22%23079a64%22%20stop-opacity%3D%22.615%22%2F%3E%3Cstop%20offset%3D%22.8474%22%20stop-color%3D%22%23048a59%22%20stop-opacity%3D%22.847%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23017b4e%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%227af419cb-18b8-4bef-afbc-9d12eb7f87af%22%20gradientTransform%3D%22matrix%28.906%20-.423%20.423%20.906%20-233.738%20-542.323%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%227.007%22%20x2%3D%227.007%22%20xlink%3Ahref%3D%22%23e92365d4-6418-4adb-bfe1-ccf6c382c677%22%20y1%3D%221065.3%22%20y2%3D%221079.493%22%2F%3E%3ClinearGradient%20id%3D%2277a1dbac-218f-42db-877d-c66dfdfcb78c%22%20gradientTransform%3D%22matrix%28.906%20-.423%20.423%20.906%20-233.738%20-542.323%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2252.45%22%20x2%3D%2275.229%22%20xlink%3Ahref%3D%22%23e92365d4-6418-4adb-bfe1-ccf6c382c677%22%20y1%3D%221005.688%22%20y2%3D%221005.688%22%2F%3E%3ClinearGradient%20id%3D%224ec3be68-a517-4da6-a9b1-2043f0ed3cfd%22%20gradientTransform%3D%22matrix%28.906%20-.423%20.423%20.906%20-233.738%20-542.323%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-18.218%22%20x2%3D%22-41.084%22%20xlink%3Ahref%3D%22%23e92365d4-6418-4adb-bfe1-ccf6c382c677%22%20y1%3D%22973.106%22%20y2%3D%22950.241%22%2F%3E%3ClinearGradient%20id%3D%22abd988e0-0214-446c-a87c-83e14453bac7%22%20gradientTransform%3D%22matrix%28.906%20-.423%20.423%20.906%20-233.738%20-542.323%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-44.725%22%20x2%3D%22-18.27%22%20xlink%3Ahref%3D%22%23d1507831-4983-4a4e-bad2-0975a64f748b%22%20y1%3D%22946.599%22%20y2%3D%22973.054%22%2F%3E%3ClinearGradient%20id%3D%2211db1fee-1827-455a-9f95-50d74df57f51%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22168.347%22%20x2%3D%22172.981%22%20xlink%3Ahref%3D%22%23e92365d4-6418-4adb-bfe1-ccf6c382c677%22%20y1%3D%22435.974%22%20y2%3D%22389.875%22%2F%3E%3ClinearGradient%20id%3D%22dd8e58f8-a122-4526-a4ba-898ec93d3f92%22%20gradientTransform%3D%22matrix%28-.707%20.707%20.707%20.707%20-506.435%20586.603%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-602.24%22%20x2%3D%22-595.145%22%20xlink%3Ahref%3D%22%23df9bba67-d283-4da7-b502-eb9231cb7daf%22%20y1%3D%22319.725%22%20y2%3D%22319.725%22%2F%3E%3ClinearGradient%20id%3D%22da1d53ba-4cbb-455e-9825-ef9d19ba2b5f%22%20gradientTransform%3D%22matrix%28-1%200%200%201%20357.751%200%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22210.359%22%20x2%3D%22218.521%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22384.936%22%20y2%3D%22393.098%22%2F%3E%3ClinearGradient%20id%3D%22db83c2dd-cc55-4254-a332-7e0ae9938697%22%20gradientTransform%3D%22matrix%28-1%200%200%201%20357.751%200%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22218.433%22%20x2%3D%22229.107%22%20xlink%3Ahref%3D%22%2306376662-06c5-4d88-9ec1-f990e3a4ef4d%22%20y1%3D%22384.68%22%20y2%3D%22374.006%22%2F%3E%3ClinearGradient%20id%3D%22f63da605-bfa5-4cd9-b536-ea584a814282%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22106.931%22%20x2%3D%22122.349%22%20xlink%3Ahref%3D%22%2393f498bd-8b61-49ef-a580-03ccc62c0b6d%22%20y1%3D%22352.294%22%20y2%3D%22367.711%22%2F%3E%3ClinearGradient%20id%3D%2214d07b22-b95e-4f5e-aed4-f1063d9d2d9b%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22114.768%22%20x2%3D%22114.768%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%22359.08%22%20y2%3D%22381.272%22%2F%3E%3ClinearGradient%20id%3D%22653e0b43-29f2-4032-9c19-05765f8a4218%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22113.447%22%20x2%3D%22131.174%22%20xlink%3Ahref%3D%22%2311192d83-a1d7-47ce-b09a-f84b2c2cc45f%22%20y1%3D%22358.99%22%20y2%3D%22374.282%22%2F%3E%3ClinearGradient%20id%3D%229a70fae1-06cc-4666-bc55-27f316795332%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22222.536%22%20x2%3D%22425.704%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22235.149%22%20y2%3D%22529.564%22%2F%3E%3ClinearGradient%20id%3D%22caf437be-fa47-494b-bd33-ced6d714140f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22241.12%22%20x2%3D%22444.289%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22222.324%22%20y2%3D%22516.74%22%2F%3E%3ClinearGradient%20id%3D%22f385d4a8-3e4c-4c4c-bc11-4a6a1a812fc8%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22233.951%22%20x2%3D%22437.119%22%20xlink%3Ahref%3D%22%235a2f4194-1c36-4035-be7b-50e5cfc65998%22%20y1%3D%22227.271%22%20y2%3D%22521.687%22%2F%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m410.207%20170.304h-308.414l154.207-154.207zm-272.201-15h235.988l-117.994-117.994z%22%20fill%3D%22url%28%23a565aa32-a9d5-480e-b51f-87d35015508f%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m410.207%20170.304h-308.414l154.207-154.207zm-272.201-15h235.988l-117.994-117.994z%22%20fill%3D%22url%28%232af4f214-dc11-439d-b58a-8b59d388e761%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%2225.751%22%20fill%3D%22url%28%236e1d3a15-601f-4d63-8473-a1f11778c7d2%29%22%20r%3D%2225.751%22%2F%3E%3Cpath%20d%3D%22m230.249%2025.751c0%2014.222%2011.529%2025.751%2025.751%2025.751s25.751-11.529%2025.751-25.751c0-3.08-.543-6.033-1.534-8.771h-48.433c-.992%202.738-1.535%205.691-1.535%208.771z%22%20fill%3D%22url%28%2383dd2cb3-fb12-47ba-b87e-221fe40b7268%29%22%2F%3E%3Cpath%20d%3D%22m237.792%2043.959c10.056%2010.056%2026.361%2010.056%2036.417%200s10.056-26.361%200-36.417c-2.178-2.178-4.65-3.882-7.287-5.117l-34.247%2034.247c1.234%202.638%202.939%205.109%205.117%207.287z%22%20fill%3D%22url%28%2374f9ec8d-7799-4994-af02-e159852a9168%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m471.647%20512h-431.294c-22.286%200-40.353-18.067-40.353-40.353v-310.367c0-22.286%2018.066-40.353%2040.353-40.353h431.295c22.286%200%2040.353%2018.066%2040.353%2040.353v310.368c-.001%2022.285-18.067%2040.352-40.354%2040.352z%22%20fill%3D%22url%28%234879522c-ea59-4347-9a33-78f3ff3d0c0a%29%22%2F%3E%3Cpath%20d%3D%22m31.738%20490.557c-7.632%200-13.842-6.21-13.842-13.843v-320.501c0-7.633%206.21-13.843%2013.842-13.843h448.524c7.632%200%2013.842%206.21%2013.842%2013.843v320.501c0%207.633-6.21%2013.843-13.842%2013.843z%22%20fill%3D%22url%28%23a3c6aa5f-28d1-42ca-a61e-47e0c4b8dc63%29%22%2F%3E%3Cpath%20d%3D%22m0%20394.695v76.952c0%2022.286%2018.067%2040.353%2040.353%2040.353h431.295c22.285%200%2040.352-18.067%2040.352-40.353v-76.952z%22%20fill%3D%22url%28%23056ea4cd-dfc5-4524-8ee9-ca9a2a68b8ed%29%22%2F%3E%3Cpath%20d%3D%22m471.647%20120.927h-223.904v391.073h223.904c22.286%200%2040.353-18.067%2040.353-40.353v-310.367c0-22.286-18.067-40.353-40.353-40.353z%22%20fill%3D%22url%28%230c3fa3e9-0c12-4ec0-bbd8-91f32a39e21c%29%22%2F%3E%3Cpath%20d%3D%22m500.658%20204.385-217.252%20144.357%20163.258%20163.258h24.984c22.285%200%2040.352-18.067%2040.352-40.353v-255.92z%22%20fill%3D%22url%28%2379dfd4ca-0302-4e52-8dbf-c07508285f9d%29%22%2F%3E%3Cpath%20d%3D%22m34.577%20459.382v-285.837c0-6.883%205.58-12.463%2012.463-12.463h417.921c6.883%200%2012.462%205.58%2012.462%2012.462v285.837c0%206.883-5.58%2012.463-12.463%2012.463h-417.921c-6.882.001-12.462-5.579-12.462-12.462z%22%20fill%3D%22url%28%2373bd2d97-9061-403d-9e0e-71ed1f110dc9%29%22%2F%3E%3Cpath%20d%3D%22m464.961%20161.083h-417.921c-6.883%200-12.463%205.58-12.463%2012.463v221.15h442.846v-221.15c0-6.884-5.58-12.463-12.462-12.463z%22%20fill%3D%22url%28%2300657de1-41d2-43c7-9e5c-2c0bb58dcf0e%29%22%2F%3E%3Cpath%20d%3D%22m477.423%20459.382v-32.303l-234.197-234.197-180.55%20128.894%20150.069%20150.069h252.215c6.883-.001%2012.463-5.58%2012.463-12.463z%22%20fill%3D%22url%28%23eb0d547c-00b2-45e6-94d4-cd2c35fb5014%29%22%2F%3E%3Cpath%20d%3D%22m226.317%20274.281-56.708%20184.106%2013.457%2013.457h240.815z%22%20fill%3D%22url%28%23f6553559-216e-44bb-8542-066e8daeca6d%29%22%2F%3E%3Cpath%20d%3D%22m283.406%20348.742%20123.102%20123.102h58.452c6.883%200%2012.463-5.58%2012.463-12.463v-239.557z%22%20fill%3D%22url%28%23df6e2872-4080-4567-a469-f030a83d3167%29%22%2F%3E%3Cpath%20d%3D%22m243.116%20161.083h-196.076c-6.883%200-12.463%205.58-12.463%2012.463v285.837c0%206.883%205.58%2012.462%2012.462%2012.462h196.077z%22%20fill%3D%22url%28%2367e86e37-9eb0-4041-80aa-b6ad66273e08%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m161.12%20374.52v60.74l-60.74-60.74z%22%20fill%3D%22url%28%23cc43ad60-d2c2-4828-9ace-464175010e7d%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m312.484%20170.356%20152.014%2022.625c2.576.383%204.353%202.782%203.97%205.358l-19.052%20128.004-53.766%2039.834-109.878-16.354c-2.576-.383-4.353-2.782-3.97-5.358l25.323-170.14c.384-2.575%202.783-4.353%205.359-3.969z%22%20fill%3D%22url%28%23450ff423-f77e-4b6d-9f3a-01ba413c66d4%29%22%2F%3E%3Cpath%20d%3D%22m465.174%20220.472-175.394%20129.948%20105.871%2015.758%2053.766-39.834z%22%20fill%3D%22url%28%2328ebb149-64f4-41f7-85fe-4b8cedc6e7b6%29%22%2F%3E%3Cpath%20d%3D%22m444.187%20330.214-48.537%2035.962-109.877-16.353c-2.577-.379-4.355-2.782-3.968-5.359l5.596-37.582z%22%20fill%3D%22url%28%2392923a1e-294c-42c2-9aca-4c01a74203b1%29%22%2F%3E%3Cpath%20d%3D%22m464.498%20192.981-57.118-8.501-26.712%20179.468%2014.982%202.23%2053.766-39.834%2019.052-128.004c.384-2.576-1.394-4.975-3.97-5.359z%22%20fill%3D%22url%28%23eb8992c4-d457-47c0-9526-9953f07ecdab%29%22%2F%3E%3Cpath%20d%3D%22m397.607%20365.996c22.739-2.117%2042.416-16.696%2051.065-37.832l.745-1.82.946-6.357c-.523%203.511-3.792%205.934-7.303%205.411l-35.779-5.325c-2.576-.383-4.975%201.394-5.358%203.97l-5.325%2035.779c-.523%203.511-3.792%205.933-7.303%205.411l6.357.946z%22%20fill%3D%22url%28%23fa3495cc-125b-46db-8909-cac6a2264796%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22m463.862%20229.288-38.412%2038.789%2028.41%2028.411z%22%20fill%3D%22url%28%23478e4a24-e375-4d87-a758-f30db1f91c37%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m480.557%20212.279-3.95-3.95-32.97%2032.97c-6.62%206.62-12.411%2014.019-17.247%2022.035l-1.567%202.597c-.818%201.355.727%202.9%202.082%202.082l2.597-1.567c8.016-4.836%2015.415-10.627%2022.035-17.247l32.97-32.97z%22%20fill%3D%22url%28%23f1f6cbf5-f0ad-4de2-920a-e9237e047d6e%29%22%2F%3E%3Cpath%20d%3D%22m480.557%20212.279-3.95-3.95-32.97%2032.97c-6.62%206.62-12.411%2014.019-17.247%2022.035l-1.567%202.597c-.818%201.355.727%202.9%202.082%202.082l2.597-1.567c8.016-4.836%2015.415-10.627%2022.035-17.247l32.97-32.97z%22%20fill%3D%22url%28%235cd614fb-ed21-4746-ac4c-c62f79fd67bf%29%22%2F%3E%3Cpath%20d%3D%22m476.607%20208.329-30.576%2030.576%207.9%207.9%2030.576-30.576-3.95-3.95z%22%20fill%3D%22url%28%235e4811b9-7b16-4bd9-8f69-0109015bcf9c%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Ccircle%20cx%3D%22481.518%22%20cy%3D%22211.317%22%20fill%3D%22url%28%2391327e89-5867-47e9-91e8-5715efba24b9%29%22%20r%3D%2220.353%22%2F%3E%3Cpath%20d%3D%22m461.166%20211.317c0%2011.24%209.112%2020.353%2020.353%2020.353%2011.24%200%2020.353-9.112%2020.353-20.353%200-2.434-.429-4.768-1.213-6.932h-38.28c-.785%202.164-1.213%204.498-1.213%206.932z%22%20fill%3D%22url%28%239e7332a6-2bd2-494e-b9a2-69881b7a0072%29%22%2F%3E%3Cpath%20d%3D%22m467.127%20225.709c7.948%207.948%2020.835%207.948%2028.783%200s7.948-20.835%200-28.783c-1.721-1.721-3.675-3.068-5.759-4.044l-27.068%2027.068c.975%202.084%202.322%204.038%204.044%205.759z%22%20fill%3D%22url%28%23604ff983-07b2-4d91-b84b-508188b9655d%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m235.309%20325.858h-163.442c-6.85%200-12.402-5.553-12.402-12.402v-111.028c0-6.85%205.553-12.402%2012.402-12.402h163.443c6.85%200%2012.402%205.553%2012.402%2012.402v111.028c0%206.849-5.553%2012.402-12.403%2012.402z%22%20fill%3D%22url%28%23c646cd84-a221-4d52-b8cc-88ca5a4fea01%29%22%2F%3E%3Cpath%20d%3D%22m59.465%20245.13v68.326c0%206.849%205.553%2012.402%2012.402%2012.402h163.443c6.849%200%2012.402-5.553%2012.402-12.402v-68.326z%22%20fill%3D%22url%28%2372e01f0f-9d82-47f6-97d7-ee9ace71b4ec%29%22%2F%3E%3Cpath%20d%3D%22m235.31%20190.026h-74.19v135.832h74.19c6.849%200%2012.402-5.553%2012.402-12.402v-111.028c0-6.849-5.553-12.402-12.402-12.402z%22%20fill%3D%22url%28%23c83be454-6223-4a0b-8b0c-147ae288729d%29%22%2F%3E%3Cpath%20d%3D%22m247.712%20295.675-21.395-21.395-15.887%2051.577h24.879c6.849%200%2012.402-5.553%2012.402-12.402v-17.78z%22%20fill%3D%22url%28%236921e282-17fd-4275-a6d3-b77bd1bf8631%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m74.798%20270.092h124.794c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-124.794c-2.126%200-3.85-1.724-3.85-3.85%200-2.126%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%2362e4f0ca-ae0e-454e-adc5-d54e404e7b9b%29%22%2F%3E%3Cpath%20d%3D%22m74.798%20254.092h157.58c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-157.58c-2.126%200-3.85-1.724-3.85-3.85%200-2.126%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%236b3d108a-a280-4411-b02c-34c71fb46a0f%29%22%2F%3E%3Cpath%20d%3D%22m74.798%20238.092h74.94c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-74.94c-2.126%200-3.85-1.724-3.85-3.85%200-2.127%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%237e0271eb-315f-4df4-a440-c91e222b22ba%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m284.329%20406.116-111.826%2052.145c-1.895.884-4.147.064-5.031-1.831l-43.909-94.163%2018.374-50.481%2080.829-37.691c1.895-.884%204.147-.064%205.031%201.831l58.363%20125.159c.884%201.895.064%204.147-1.831%205.031z%22%20fill%3D%22url%28%2391a0495f-be64-49bf-b298-53f5da92c470%29%22%2F%3E%3Cpath%20d%3D%22m150.688%20420.436%2016.784%2035.994c.884%201.895%203.136%202.715%205.031%201.831l111.826-52.145c1.895-.884%202.715-3.136%201.831-5.031l-16.784-35.994z%22%20fill%3D%22url%28%237af419cb-18b8-4bef-afbc-9d12eb7f87af%29%22%2F%3E%3Cpath%20d%3D%22m222.766%20274.095-37.806%2017.629%2061.563%20132.021%2037.806-17.629c1.895-.884%202.715-3.136%201.831-5.031l-58.363-125.159c-.883-1.895-3.136-2.715-5.031-1.831z%22%20fill%3D%22url%28%2377a1dbac-218f-42db-877d-c66dfdfcb78c%29%22%2F%3E%3Cpath%20d%3D%22m159.88%20440.149%2059.939-164.68-77.882%2036.317-18.374%2050.481z%22%20fill%3D%22url%28%234ec3be68-a517-4da6-a9b1-2043f0ed3cfd%29%22%2F%3E%3Cpath%20d%3D%22m140.708%20312.774c-14.291%2011.485-21.016%2029.96-17.451%2047.944l.307%201.549%202.181%204.676c-1.204-2.583-.087-5.653%202.496-6.857l26.32-12.273c1.895-.884%202.715-3.136%201.831-5.031l-12.273-26.32c-1.204-2.583-.087-5.653%202.496-6.857l-4.676%202.181z%22%20fill%3D%22url%28%23abd988e0-0214-446c-a87c-83e14453bac7%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m153.679%20391.156-18.259-3.463%2032.053%2068.737c.884%201.895%203.136%202.715%205.031%201.831l32.927-15.354z%22%20fill%3D%22url%28%2311db1fee-1827-455a-9f95-50d74df57f51%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m115.729%20361.091%203.95-3.95%2032.97%2032.97c6.62%206.62%2012.411%2014.019%2017.247%2022.035l1.567%202.597c.818%201.355-.727%202.9-2.082%202.082l-2.597-1.567c-8.016-4.836-15.415-10.627-22.035-17.247l-32.97-32.97z%22%20fill%3D%22url%28%23dd8e58f8-a122-4526-a4ba-898ec93d3f92%29%22%2F%3E%3Cpath%20d%3D%22m115.729%20361.091%203.95-3.95%2032.97%2032.97c6.62%206.62%2012.411%2014.019%2017.247%2022.035l1.567%202.597c.818%201.355-.727%202.9-2.082%202.082l-2.597-1.567c-8.016-4.836-15.415-10.627-22.035-17.247l-32.97-32.97z%22%20fill%3D%22url%28%23da1d53ba-4cbb-455e-9825-ef9d19ba2b5f%29%22%2F%3E%3Cpath%20d%3D%22m119.679%20357.141%2030.576%2030.576-7.9%207.9-30.576-30.576%203.95-3.95z%22%20fill%3D%22url%28%23db83c2dd-cc55-4254-a332-7e0ae9938697%29%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Ccircle%20cx%3D%22114.768%22%20cy%3D%22360.13%22%20fill%3D%22url%28%23f63da605-bfa5-4cd9-b536-ea584a814282%29%22%20r%3D%2220.353%22%2F%3E%3Cpath%20d%3D%22m94.415%20360.13c0%2011.24%209.112%2020.353%2020.353%2020.353%2011.24%200%2020.353-9.112%2020.353-20.353%200-2.434-.429-4.768-1.213-6.932h-38.28c-.784%202.164-1.213%204.497-1.213%206.932z%22%20fill%3D%22url%28%2314d07b22-b95e-4f5e-aed4-f1063d9d2d9b%29%22%2F%3E%3Cpath%20d%3D%22m100.376%20374.521c7.948%207.948%2020.835%207.948%2028.783%200s7.948-20.835%200-28.783c-1.721-1.721-3.675-3.068-5.759-4.044l-27.068%2027.068c.976%202.084%202.323%204.038%204.044%205.759z%22%20fill%3D%22url%28%23653e0b43-29f2-4032-9c19-05765f8a4218%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m321.574%20436.698h85.404c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-85.404c-2.126%200-3.85-1.724-3.85-3.85%200-2.127%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%239a70fae1-06cc-4666-bc55-27f316795332%29%22%2F%3E%3Cpath%20d%3D%22m321.574%20420.698h118.19c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-118.19c-2.126%200-3.85-1.724-3.85-3.85%200-2.127%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%23caf437be-fa47-494b-bd33-ced6d714140f%29%22%2F%3E%3Cpath%20d%3D%22m321.574%20404.697h74.94c2.126%200%203.85%201.724%203.85%203.85%200%202.126-1.724%203.85-3.85%203.85h-74.94c-2.126%200-3.85-1.724-3.85-3.85%200-2.126%201.724-3.85%203.85-3.85z%22%20fill%3D%22url%28%23f385d4a8-3e4c-4c4c-bc11-4a6a1a812fc8%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3Cg%2F%3E%3C%2Fsvg%3E');
+    --vault-workspace-book-bulb-icon: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20id%3D%22bdaf2d71-db5a-40c6-a8f6-3e032cfdbd03%22%20enable-background%3D%22new%200%200%20510%20510%22%20height%3D%22512%22%20viewBox%3D%220%200%20510%20510%22%20width%3D%22512%22%3E%3ClinearGradient%20id%3D%22266464d0-ffa2-4389-a5fc-06b7e22a7bc7%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22101.652%22%20x2%3D%22452.378%22%20y1%3D%22298.133%22%20y2%3D%22503.73%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d9b1ee%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23814aa0%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%229d7ff816-2631-49e4-b8e6-f6c0b852a743%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%235b3374%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235b3374%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%2210d52553-e4dd-4284-a19c-d6563aa570b6%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%239d7ff816-2631-49e4-b8e6-f6c0b852a743%22%20y1%3D%22444.64%22%20y2%3D%22496.645%22%2F%3E%3ClinearGradient%20id%3D%229934df23-ea14-49d8-acbd-763afff83f3b%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22408.091%22%20x2%3D%22274.224%22%20xlink%3Ahref%3D%22%239d7ff816-2631-49e4-b8e6-f6c0b852a743%22%20y1%3D%22503.466%22%20y2%3D%22387.448%22%2F%3E%3ClinearGradient%20id%3D%223a7ede69-7eac-45e4-a6d8-55fb549b55e6%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e6eeff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23bac8fa%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22f2cac6ae-4b30-44ce-aa7b-fe6280ac8d2c%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22148.624%22%20x2%3D%22173.893%22%20xlink%3Ahref%3D%22%233a7ede69-7eac-45e4-a6d8-55fb549b55e6%22%20y1%3D%22354.773%22%20y2%3D%22485.82%22%2F%3E%3ClinearGradient%20id%3D%227bee3805-d8fc-4395-aa62-e36a591719f3%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22308.638%22%20x2%3D%22345.661%22%20xlink%3Ahref%3D%22%233a7ede69-7eac-45e4-a6d8-55fb549b55e6%22%20y1%3D%22368.951%22%20y2%3D%22477.668%22%2F%3E%3ClinearGradient%20id%3D%2276e55e36-dcd5-4efb-a903-074b754757bc%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23a7b7f1%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a7b7f1%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%227effae5f-1622-43ca-b582-f5e4ed4ff052%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22252.42%22%20x2%3D%22258.884%22%20xlink%3Ahref%3D%22%2376e55e36-dcd5-4efb-a903-074b754757bc%22%20y1%3D%22522.386%22%20y2%3D%22388.988%22%2F%3E%3ClinearGradient%20id%3D%22883ec787-ca43-4e90-88c9-15cb37f8c925%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2289.923%22%20x2%3D%22296.325%22%20xlink%3Ahref%3D%22%233a7ede69-7eac-45e4-a6d8-55fb549b55e6%22%20y1%3D%22312.504%22%20y2%3D%22433.917%22%2F%3E%3ClinearGradient%20id%3D%22807bd1e0-722d-4ddd-bd60-9196078b743b%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22249.709%22%20x2%3D%22448.799%22%20xlink%3Ahref%3D%22%233a7ede69-7eac-45e4-a6d8-55fb549b55e6%22%20y1%3D%22312.118%22%20y2%3D%22428.826%22%2F%3E%3ClinearGradient%20id%3D%22eef64b42-f6ff-4935-b5b9-0cf8149eb69a%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22332.105%22%20x2%3D%22411.05%22%20xlink%3Ahref%3D%22%2376e55e36-dcd5-4efb-a903-074b754757bc%22%20y1%3D%22342.222%22%20y2%3D%22421.167%22%2F%3E%3ClinearGradient%20id%3D%2282491fa3-8517-4747-8a32-6e8145be5b17%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2290.696%22%20x2%3D%22254.976%22%20xlink%3Ahref%3D%22%2376e55e36-dcd5-4efb-a903-074b754757bc%22%20y1%3D%22235.985%22%20y2%3D%22453.96%22%2F%3E%3ClinearGradient%20id%3D%2229da5f7e-e4fb-4137-85d0-d5b576e8e2bf%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23a7b7f1%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fff5c6%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22294312ce-8b29-4aae-afa0-40193637a374%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22140.581%22%20x2%3D%22217.914%22%20xlink%3Ahref%3D%22%2329da5f7e-e4fb-4137-85d0-d5b576e8e2bf%22%20y1%3D%22406.705%22%20y2%3D%22302.705%22%2F%3E%3ClinearGradient%20id%3D%22a8a39c8a-eb48-4ef4-b53b-cdf7ebd0f8be%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22383.769%22%20x2%3D%22277.862%22%20xlink%3Ahref%3D%22%2329da5f7e-e4fb-4137-85d0-d5b576e8e2bf%22%20y1%3D%22410.231%22%20y2%3D%22304.324%22%2F%3E%3ClinearGradient%20id%3D%22600cac91-14ef-4052-90eb-34bc7469bca5%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fee45a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fea613%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22506a2d13-d112-43e6-aa07-76efd71bdcbd%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22199.905%22%20x2%3D%22338.446%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%2291.772%22%20y2%3D%22230.313%22%2F%3E%3ClinearGradient%20id%3D%22af2d1e38-f68e-492d-a523-d305702c10a0%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22254.998%22%20x2%3D%22254.998%22%20y1%3D%22223.333%22%20y2%3D%22276.87%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fe7701%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.1854%22%20stop-color%3D%22%23f87204%22%20stop-opacity%3D%22.185%22%2F%3E%3Cstop%20offset%3D%22.4314%22%20stop-color%3D%22%23e7630c%22%20stop-opacity%3D%22.431%22%2F%3E%3Cstop%20offset%3D%22.7114%22%20stop-color%3D%22%23cb4b19%22%20stop-opacity%3D%22.711%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a72b2b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22fb743d41-8699-4a43-b20e-0155715cba95%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20y1%3D%22333.784%22%20y2%3D%22364.274%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%235a5a5a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23444%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22cfad0a7d-0932-4530-b36d-86ac573706f3%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23b4d2e2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237bacdf%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22d9460268-31bf-444a-9654-9b5d5df12a8b%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23cfad0a7d-0932-4530-b36d-86ac573706f3%22%20y1%3D%22324.5%22%20y2%3D%22339.542%22%2F%3E%3ClinearGradient%20id%3D%224589c38c-2f1d-4083-b6f3-1af5b2df83b7%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20xlink%3Ahref%3D%22%23cfad0a7d-0932-4530-b36d-86ac573706f3%22%20y1%3D%22287.5%22%20y2%3D%22302.542%22%2F%3E%3ClinearGradient%20id%3D%22f12b95ce-f8f4-4e23-9ddf-1bf8bd787d33%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22255%22%20x2%3D%22255%22%20y1%3D%22217%22%20y2%3D%2244.432%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fff5c6%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fff5c6%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%224e85ca94-6af1-412f-a4d2-3cc831a32637%22%20gradientTransform%3D%22matrix%280%201%20-1%200%204853.736%20-7922.238%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%228025.106%22%20x2%3D%228069.621%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%224393.437%22%20y2%3D%224393.437%22%2F%3E%3ClinearGradient%20id%3D%22e7ae0ca7-2725-4ea2-9d00-e60c44dd3aee%22%20gradientTransform%3D%22matrix%28.707%20.707%20-.707%20.707%20-754.412%20-9504.19%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%227587.968%22%20x2%3D%227632.484%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%225913.44%22%20y2%3D%225913.44%22%2F%3E%3ClinearGradient%20id%3D%227ca7ee8f-b025-405a-aa96-cf76f34041c7%22%20gradientTransform%3D%22matrix%28-.707%20.707%20-.707%20-.707%207700.853%20-2838.164%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%227255.375%22%20x2%3D%227299.891%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%222999.037%22%20y2%3D%222999.037%22%2F%3E%3ClinearGradient%20id%3D%22eb5743c3-3ee2-44df-a061-1abf0c07d529%22%20gradientTransform%3D%22matrix%280%201%201%200%20-3925.148%20-7922.238%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%228025.106%22%20x2%3D%228069.621%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%223974.849%22%20y2%3D%223974.849%22%2F%3E%3ClinearGradient%20id%3D%22457c748d-7b90-4e6c-becb-7822521685a8%22%20gradientTransform%3D%22matrix%28-.707%20.707%20.707%20.707%201683%20-9504.19%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%227883.957%22%20x2%3D%227928.473%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%225617.451%22%20y2%3D%225617.451%22%2F%3E%3ClinearGradient%20id%3D%22a012899c-9510-44d4-93e5-df109622662d%22%20gradientTransform%3D%22matrix%28.707%20.707%20.707%20-.707%20-6772.265%20-2838.164%29%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%226959.386%22%20x2%3D%227003.902%22%20xlink%3Ahref%3D%22%23600cac91-14ef-4052-90eb-34bc7469bca5%22%20y1%3D%222703.048%22%20y2%3D%222703.048%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m430.308%20265.586c-58.435-21.897-116.946-19.872-175.308%206.007v9.414c0-.369%200-3.507%200-9.414-58.417-25.904-116.928-27.883-175.309-6.007-8.85%203.316-14.684%2011.819-14.684%2021.269v208.337c0%208.508%208.457%2014.479%2016.446%2011.551%2052.814-19.356%20105.733-19.188%20158.59.551%209.655%203.605%2020.262%203.605%2029.917-.001%2052.812-19.723%20105.731-19.921%20158.589-.549%207.988%202.928%2016.445-3.044%2016.445-11.552%200-67.842%200-140.495%200-208.337-.001-9.45-5.836-17.953-14.686-21.269z%22%20fill%3D%22url%28%23266464d0-ffa2-4389-a5fc-06b7e22a7bc7%29%22%2F%3E%3Cpath%20d%3D%22m65.007%20495.193c0%208.508%208.457%2014.479%2016.446%2011.551%2052.814-19.356%20105.732-19.188%20158.59.551%209.655%203.606%2020.262%203.605%2029.917-.001%2052.812-19.723%20105.73-19.921%20158.589-.549%207.988%202.928%2016.445-3.044%2016.445-11.552%200-34.024%200-69.257%200-104.487h-379.988c0%2035.23%200%2070.463.001%20104.487z%22%20fill%3D%22url%28%2310d52553-e4dd-4284-a19c-d6563aa570b6%29%22%2F%3E%3Cpath%20d%3D%22m444.99%20286.853v208.34c0%208.51-8.45%2014.48-16.44%2011.55-52.86-19.37-105.78-19.17-158.59.55-9.66%203.61-20.26%203.61-29.92%200-45.11-16.84-90.27-19.43-135.37-7.79l-16.09-16.09v-220.95c55.43-18.48%20110.96-15.46%20166.42%209.13%2058.36-25.88%20116.87-27.9%20175.31-6.01%208.85%203.32%2014.68%2011.82%2014.68%2021.27z%22%20fill%3D%22url%28%239934df23-ea14-49d8-acbd-763afff83f3b%29%22%2F%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m255%20450.425v40.548c-52.043-23.072-104.18-25.058-156.199-5.994-7.193%202.633-14.797-2.738-14.797-10.39v-40.548c0%207.651%207.604%2013.022%2014.797%2010.39%2052.019-19.063%20104.156-17.077%20156.199%205.994z%22%20fill%3D%22url%28%23f2cac6ae-4b30-44ce-aa7b-fe6280ac8d2c%29%22%2F%3E%3Cpath%20d%3D%22m425.996%20434.042v40.548c0%207.651-7.604%2013.034-14.797%2010.39-52.066-19.075-104.203-17.065-156.199%205.994v-40.548c51.996-23.06%20104.133-25.07%20156.199-5.994%207.193%202.644%2014.797-2.739%2014.797-10.39z%22%20fill%3D%22url%28%237bee3805-d8fc-4395-aa62-e36a591719f3%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22m411.199%20473.814c-52.066-19.075-104.203-17.066-156.199%205.994-52.043-23.072-104.18-25.058-156.199-5.994-7.193%202.633-14.797-2.738-14.797-10.39v11.165c0%207.651%207.604%2013.022%2014.797%2010.39%2052.019-19.064%20104.156-17.077%20156.199%205.994%2051.996-23.06%20104.133-25.069%20156.199-5.994%207.193%202.644%2014.797-2.738%2014.797-10.39v-11.165c0%207.652-7.604%2013.034-14.797%2010.39z%22%20fill%3D%22url%28%237effae5f-1622-43ca-b582-f5e4ed4ff052%29%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m84%20271.426v183.18c0%207.658%207.612%2013.032%2014.802%2010.397%2052.018-19.065%20104.149-17.084%20156.197%205.994.001-71.103.001-142.206.001-213.309-52.577-23.314-105.238-25.096-157.783-5.406-7.965%202.985-13.217%2010.638-13.217%2019.144z%22%20fill%3D%22url%28%23883ec787-ca43-4e90-88c9-15cb37f8c925%29%22%2F%3E%3Cpath%20d%3D%22m255%20257.688v213.309c52-23.059%20104.131-25.075%20156.198-5.993%207.19%202.635%2014.801-2.74%2014.801-10.397%200-61.06%200-122.12%200-183.181%200-8.506-5.252-16.159-13.217-19.144-52.593-19.708-105.254-17.885-157.782%205.406z%22%20fill%3D%22url%28%23807bd1e0-722d-4ddd-bd60-9196078b743b%29%22%2F%3E%3Cpath%20d%3D%22m408.325%20359.981c-10.94-3.167-21.883-5.401-32.829-6.705-5.773-.688-10.869%203.763-10.869%209.576v67.801c0%204.927%203.71%209.061%208.609%209.587%2010.191%201.093%2020.38%202.99%2030.566%205.699%205.292%201.408%2010.492-2.523%2010.492-7.999v-69.984c0-3.686-2.427-6.949-5.969-7.975z%22%20fill%3D%22url%28%23eef64b42-f6ff-4935-b5b9-0cf8149eb69a%29%22%2F%3E%3Cpath%20d%3D%22m118.131%20365.403c23.914-6.364%2047.847-8.28%2071.779-5.75%204.896.518%209.158-3.324%209.158-8.247v-70.518c0-4.191-3.12-7.76-7.282-8.241-26.055-3.008-52.112-.746-78.144%206.788-3.546%201.026-5.982%204.288-5.982%207.979v69.984c-.001%205.468%205.187%209.411%2010.471%208.005z%22%20fill%3D%22url%28%2382491fa3-8517-4747-8a32-6e8145be5b17%29%22%2F%3E%3Cg%20fill%3D%22%237bacdf%22%3E%3Cg%3E%3Cpath%20d%3D%22m106.595%20412.894c-3.028%200-5.846-1.928-6.835-4.964-1.23-3.776.832-7.836%204.608-9.067%2042.185-13.752%2084.968-14.086%20127.162-.988%203.793%201.178%205.913%205.207%204.736%209.001-1.177%203.792-5.206%205.913-9%204.736-39.293-12.197-79.142-11.885-118.439.926-.742.241-1.494.356-2.232.356z%22%2F%3E%3Cpath%20d%3D%22m106.595%20442.938c-3.028%200-5.846-1.928-6.835-4.964-1.23-3.776.832-7.836%204.608-9.067%2042.183-13.754%2084.966-14.086%20127.162-.988%203.793%201.178%205.913%205.207%204.736%209-1.177%203.792-5.206%205.913-9%204.736-39.296-12.199-79.144-11.886-118.439.926-.742.242-1.494.357-2.232.357z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m353.76%20395.498v.009c0%203.988-3.243%207.178-7.231%207.192-20.047.07-40.094%203.349-60.003%209.837-.738.24-1.486.355-2.225.355-3.03%200-5.849-1.927-6.837-4.957-1.237-3.778.834-7.834%204.602-9.071%2021.412-6.976%2042.98-10.501%2064.542-10.559%203.958-.011%207.152%203.238%207.152%207.194z%22%2F%3E%3Cpath%20d%3D%22m353.76%20425.532c0%203.986-3.241%207.176-7.228%207.192-20.037.08-40.098%203.374-60.006%209.862-.738.24-1.486.355-2.225.355-3.03%200-5.849-1.927-6.837-4.967-1.237-3.778.834-7.834%204.602-9.071%2021.394-6.967%2042.975-10.499%2064.539-10.566%203.959-.012%207.155%203.237%207.155%207.195z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m284.3%20352.167c-3.029%200-5.847-1.929-6.836-4.965-1.23-3.775.832-7.835%204.609-9.066%2042.184-13.752%2084.967-14.083%20127.161-.988%203.793%201.178%205.913%205.207%204.736%209s-5.206%205.912-9%204.736c-39.292-12.196-79.141-11.884-118.44.926-.74.243-1.492.357-2.23.357z%22%2F%3E%3Cpath%20d%3D%22m353.76%20364.816v.009c0%203.988-3.243%207.178-7.231%207.192-20.047.07-40.094%203.349-60.003%209.837-.738.24-1.486.355-2.225.355-3.03%200-5.849-1.927-6.837-4.957-1.237-3.778.834-7.834%204.602-9.071%2021.412-6.976%2042.98-10.5%2064.542-10.559%203.958-.012%207.152%203.237%207.152%207.194z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22m284.3%20291.441c-3.029%200-5.847-1.928-6.836-4.965-1.23-3.775.832-7.835%204.609-9.066%2042.182-13.753%2084.967-14.085%20127.161-.988%203.793%201.178%205.913%205.207%204.736%209-1.177%203.792-5.202%205.911-9%204.736-39.293-12.197-79.142-11.886-118.44.926-.74.242-1.492.357-2.23.357z%22%2F%3E%3Cpath%20d%3D%22m284.3%20321.485c-3.029%200-5.847-1.928-6.836-4.965-1.23-3.775.832-7.835%204.609-9.066%2028.918-9.427%2058.273-12.585%2087.262-9.382%203.947.436%206.793%203.991%206.358%207.938-.437%203.947-3.973%206.793-7.938%206.358-26.938-2.978-54.264-.031-81.224%208.76-.741.242-1.493.357-2.231.357z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22m84%20271.426v183.18c0%207.658%207.612%2013.032%2014.802%2010.397%2052.018-19.065%20104.149-17.084%20156.197%205.994.001-71.103.001-142.206.001-213.309-52.577-23.314-105.238-25.096-157.783-5.406-7.965%202.985-13.217%2010.638-13.217%2019.144z%22%20fill%3D%22url%28%23294312ce-8b29-4aae-afa0-40193637a374%29%22%2F%3E%3Cpath%20d%3D%22m255%20257.688v213.309c52-23.059%20104.131-25.075%20156.198-5.993%207.19%202.635%2014.801-2.74%2014.801-10.397%200-61.06%200-122.12%200-183.181%200-8.506-5.252-16.159-13.217-19.144-52.593-19.708-105.254-17.885-157.782%205.406z%22%20fill%3D%22url%28%23a8a39c8a-eb48-4ef4-b53b-cdf7ebd0f8be%29%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22m382.391%20127.391c0-70.356-57.034-127.39-127.39-127.391-70.203-.001-127.057%2056.569-127.391%20126.772-.18%2037.752%2016.065%2071.71%2042%2095.149%2019.78%2017.876%2030.89%2043.417%2030.89%2070.078v.001h109c0-26.927%2011.585-52.419%2031.454-70.592%2025.465-23.291%2041.437-56.787%2041.437-94.017z%22%20fill%3D%22url%28%23506a2d13-d112-43e6-aa07-76efd71bdcbd%29%22%2F%3E%3Cpath%20d%3D%22m150.321%20200c5.58%208.027%2012.056%2015.384%2019.289%2021.921%2019.78%2017.876%2030.89%2043.417%2030.89%2070.079h109c0-26.927%2011.585-52.419%2031.454-70.592%207.005-6.407%2013.287-13.591%2018.721-21.408z%22%20fill%3D%22url%28%23af2d1e38-f68e-492d-a523-d305702c10a0%29%22%2F%3E%3Cg%3E%3Ccircle%20cx%3D%22255%22%20cy%3D%22350%22%20fill%3D%22url%28%23fb743d41-8699-4a43-b20e-0155715cba95%29%22%20r%3D%2237.5%22%2F%3E%3Cpath%20d%3D%22m300.5%20351h-91c-10.217%200-18.5-8.283-18.5-18.5%200-10.217%208.283-18.5%2018.5-18.5h91c10.217%200%2018.5%208.283%2018.5%2018.5%200%2010.217-8.283%2018.5-18.5%2018.5z%22%20fill%3D%22url%28%23d9460268-31bf-444a-9654-9b5d5df12a8b%29%22%2F%3E%3Cpath%20d%3D%22m300.5%20314h-91c-10.217%200-18.5-8.283-18.5-18.5%200-10.217%208.283-18.5%2018.5-18.5h91c10.217%200%2018.5%208.283%2018.5%2018.5%200%2010.217-8.283%2018.5-18.5%2018.5z%22%20fill%3D%22url%28%234589c38c-2f1d-4083-b6f3-1af5b2df83b7%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22255%22%20cy%3D%22185.667%22%20fill%3D%22url%28%23f12b95ce-f8f4-4e23-9ddf-1bf8bd787d33%29%22%20r%3D%2277.576%22%2F%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m427.607%20117.23c0-8.852%207.176-16.028%2016.028-16.028h33.329c8.852%200%2016.028%207.176%2016.028%2016.028%200%208.852-7.176%2016.028-16.028%2016.028h-33.329c-8.852-.001-16.028-7.177-16.028-16.028z%22%20fill%3D%22url%28%234e85ca94-6af1-412f-a4d2-3cc831a32637%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m416.686%2075.928c-6.259-6.259-6.259-16.407%200-22.667l23.567-23.567c6.259-6.259%2016.407-6.259%2022.667%200%206.259%206.259%206.259%2016.407%200%2022.667l-23.567%2023.567c-6.26%206.259-16.408%206.259-22.667%200z%22%20fill%3D%22url%28%23e7ae0ca7-2725-4ea2-9d00-e60c44dd3aee%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m416.686%20158.531c6.259-6.259%2016.407-6.259%2022.667%200l23.567%2023.567c6.259%206.259%206.259%2016.407%200%2022.667-6.259%206.259-16.407%206.259-22.667%200l-23.567-23.567c-6.259-6.259-6.259-16.408%200-22.667z%22%20fill%3D%22url%28%237ca7ee8f-b025-405a-aa96-cf76f34041c7%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m82.393%20117.23c0-8.852-7.176-16.028-16.028-16.028h-33.329c-8.852%200-16.028%207.176-16.028%2016.028%200%208.852%207.176%2016.028%2016.028%2016.028h33.329c8.852-.001%2016.028-7.177%2016.028-16.028z%22%20fill%3D%22url%28%23eb5743c3-3ee2-44df-a061-1abf0c07d529%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m93.314%2075.928c6.259-6.259%206.259-16.407%200-22.667l-23.567-23.567c-6.259-6.259-16.407-6.259-22.667%200-6.259%206.259-6.259%2016.407%200%2022.667l23.567%2023.567c6.26%206.259%2016.408%206.259%2022.667%200z%22%20fill%3D%22url%28%23457c748d-7b90-4e6c-becb-7822521685a8%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22m93.314%20158.531c-6.259-6.259-16.407-6.259-22.667%200l-23.567%2023.567c-6.259%206.259-6.259%2016.407%200%2022.667%206.259%206.259%2016.407%206.259%2022.667%200l23.567-23.567c6.26-6.259%206.259-16.408%200-22.667z%22%20fill%3D%22url%28%23a012899c-9510-44d4-93e5-df109622662d%29%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+}
+.setting-item.style-settings-heading[data-id="customize-vault"] .style-settings-collapse-indicator::after {
+    content: "";
+    margin-left: var(--size-4-2);
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--text-muted);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22lucide%20lucide-anvil%22%3E%3Cpath%20d%3D%22M7%2010H6a4%204%200%200%201-4-4%201%201%200%200%201%201-1h4%22%2F%3E%3Cpath%20d%3D%22M7%205a1%201%200%200%201%201-1h13a1%201%200%200%201%201%201%207%207%200%200%201-7%207H8a1%201%200%200%201-1-1z%22%2F%3E%3Cpath%20d%3D%22M9%2012v5%22%2F%3E%3Cpath%20d%3D%22M15%2012v5%22%2F%3E%3Cpath%20d%3D%22M5%2020a3%203%200%200%201%203-3h8a3%203%200%200%201%203%203%201%201%200%200%201-1%201H6a1%201%200%200%201-1-1%22%2F%3E%3C%2Fsvg%3E");
+}
+
+
+/*=============================================================================================*/
+/*================================= CUSTOM FILE EXPLORER ICONS ================================*/
+/*=============================================================================================*/
+/*
+Add Custom File Explorer Icons for the Inbox folder and JSON files.
+*/
+
+body:not(.file-icon-remove) .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title[data-path*="Inbox"] .tree-item-icon.collapse-icon {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-inbox'%3e%3cpolyline points='22 12 16 12 14 15 10 15 8 12 2 12'/%3e%3cpath d='M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z'/%3e%3c/svg%3e");
+}
+body:not(.file-icon-remove) .workspace-leaf-content[data-type="file-explorer"] .is-unsupported.nav-file-title:is([data-path$=".json"])::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-json'%3e%3cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3e%3cpath d='M14 2v4a2 2 0 0 0 2 2h4'/%3e%3cpath d='M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1'/%3e%3cpath d='M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1'/%3e%3c/svg%3e");
+}
+
+
+body:not(.file-icon-remove).hide-file-icon .workspace-leaf-content[data-type="tag"] .tree-item-self:not(:has(>.tree-item-icon.collapse-icon)):has(div.iconize-icon):before, 
+body:not(.file-icon-remove).hide-file-icon .workspace-leaf-content[data-type="file-explorer"] :is(.nav-file-title:has(div.iconize-icon), .nav-folder.mod-root>.nav-folder-title)::before {
+    display: none;
+}
+
+/*=============================================================================================*/
+/*===================================== NAV BUTTONS GROUP =====================================*/
+/*=============================================================================================*/
+/*
+Reposition the Nav Buttons Group for the file explorer with the Add Note, Folder etc. actions to the bottom and center it.
+*/
+
+body:not(.is-mobile).workspace-vault-selector-position.theme-dark  .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-buttons-container {background: var(--background-primary-alt); border: 1px solid var(--inline-code-background-dark, var(--editor-border-color));}
+body:not(.is-mobile).workspace-vault-selector-position.theme-light .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-buttons-container {background: var(--background-primary); border: 1px solid var(--inline-code-background-light, var(--editor-border-color));}
+
+
+body:not(.is-mobile).workspace-vault-selector-position.theme-light .workspace-split.mod-left-split .nav-files-container {background-color: var(--background-mod-left-split, var(--background-primary));}
+
+
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+    padding-bottom: 0;
+}
+
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-header{
+    position: absolute;
+    bottom: calc(var(--size-2-2) + 12px);
+    z-index: var(--layer-popover);
+    order: 10;
+    width: -webkit-fill-available;
+    width: fill-available;
+    height: unset;
+    padding: 0 calc(var(--size-2-2) + 12px) 0 var(--size-2-2);
+    pointer-events: none;
+    background-color: unset;
+    border-bottom: unset;
+    justify-content: center;
+}
+body:not(.is-mobile).workspace-vault-selector-position :is(.pt-nav-header-left-sidebar-align-center .workspace-split.mod-left-split, .pt-nav-header-right-sidebar-align-center .workspace-split.mod-right-split, .pt-nav-header-left-sidebar-align-center .workspace-drawer.mod-left, .pt-nav-header-right-sidebar-align-center .workspace-drawer.mod-right) .workspace-leaf-content .nav-header {
+    justify-content: center;
+}
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-header {
+    display: flex;
+    height: var(--header-height);
+    background-color: transparent;
+    border-bottom: var(--window-border);
+}
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-buttons-container {
+    padding: var(--size-4-1);
+    pointer-events: auto;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    box-shadow: hsla( 0, 0%, 0% , 5%) 0 1px 2px, hsla( 0, 0%, 0% , 5%) 0 2px 4px, hsla( 0, 0%, 0% , 5%) 0 4px 8px, hsla( 0, 0%, 0% , 5%) 0 6px 12px;
+}
+
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-buttons-container {
+    gap: 4px;
+    align-items: center;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-horizontal.mod-sidedock.mod-left-split .nav-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+/*=============================================================================================*/
+/*================================== SIDEDOCK VAULT SELECTOR ==================================*/
+/*=============================================================================================*/
+/*
+Reposition the sidedock vault selector from the bottom to the top under the header container with the file explorer, search and bookmark icon.
+*/
+body {
+    --card-border-radius-color-light: hsla(var(--accent-h), 18%, 80%, 0.7);
+}
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .search-row, 
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .pane-empty.bookmarks-pane-empty,
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .view-content.node-insert-event,
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .nav-files-container {
+    padding-bottom: calc(38px + 2 * var(--scroll-bar-size));
+    /* padding-top: 40px; */
+}
+body:not(.is-mobile).workspace-vault-selector-position .workspace-split.mod-sidedock.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div.workspace-leaf-content {
+    padding-top: 40px;
+}
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position.workspace-vault-selector-card.theme-light:not(.mod-left-split-background-transparent-light) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    border-radius: var(--card-border-radius-dark, 8px); 
+    border: 1px solid var(--card-border-radius-color-light);
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position.workspace-vault-selector-card.theme-light:not(.mod-left-split-background-transparent-light) .workspace-split.mod-left-split div.workspace-tab-container {
+    box-shadow: none;
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position.workspace-vault-selector-card.theme-light:not(.mod-left-split-background-transparent-light) .workspace-split.mod-left-split div.workspace-tab-container .nav-files-container {
+    border: 1px solid var(--card-border-radius-color-light); 
+    border-radius: var(--card-border-radius-light);
+}
+
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    position: absolute;
+    top: 43px;
+    padding: 0;
+    gap: 0;
+    border-top: 0;
+    z-index: 10;
+}
+body:not(.is-mobile):not(.vault-workspace-no-icon) .workspace-drawer-vault-name {
+    align-items: center;
+    display: flex;
+}
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-drawer-vault-name {
+    background-color: var(--background-mod-left-split, var(--background-primary));
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-drawer-vault-name {
+    padding: 8px 34px 8px 10px;
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+    gap: 0;
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-drawer-vault-actions {
+    background-color: var(--background-mod-left-split, var(--background-primary));
+    padding: 4px 0px;
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--card-border-radius-dark, 8px);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--card-border-radius-dark, 8px);
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .workspace-drawer-vault-actions span:last-child {
+    margin-right: 5px;
+}
+
+
+body:not(.is-mobile).vault-workspace-selected-briefcase-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-briefcase-icon);
+}
+body:not(.is-mobile).vault-workspace-selected-hat-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-hat-icon);
+}
+body:not(.is-mobile).vault-workspace-selected-vault-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-vault-icon);
+}
+body:not(.is-mobile).vault-workspace-selected-book-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-book-icon);
+}
+body:not(.is-mobile).vault-workspace-selected-pin-board-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-pin-board-icon);
+}
+body:not(.is-mobile).vault-workspace-selected-book-bulb-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-book-bulb-icon);
+}
+body:not(.is-mobile).vault-workspace-custom-icon .workspace-drawer-vault-name::before {
+    background-image: var(--vault-workspace-icon);
+}
+
+
+body:not(.is-mobile):not(.vault-workspace-no-icon) .workspace-drawer-vault-name::before {
+    display: inline-flex;
+    min-width: 24px;
+    height: 24px;
+    margin-right: var(--size-4-2);
+    content: "";
+    background-size: cover;
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-name {
+    border-top-left-radius: var(--card-border-radius-dark, 8px);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--card-border-radius-dark, 8px);
+    border-bottom-right-radius: 0;
+}
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+    padding: 0;
+    border-top-left-radius: var(--card-border-radius-dark, 8px);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--card-border-radius-dark, 8px);
+    border-bottom-right-radius: 0;
+    background-color: var(--background-mod-left-split, var(--background-primary));
+    height: 40px;
+}
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-position .mk-main-menu-container {
+    padding-top: 40px;
+    display: none;
+}
+
+body:not(.is-mobile):not(.vault-workspace-no-icon) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+    display: none;
+}
+
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-sidedock.mod-left-split:has(.workspace-sidedock-vault-profile) .workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div.workspace-leaf-content {
+    padding-top: 51px;
+    background: var(--background-tertiary, var(--titlebar-background)) !important;
+}
+
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .nav-files-container,
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .search-result-container, 
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .view-content.node-insert-event,
+body:not(.is-mobile):is(.theme-dark.card-layout-open-dark, .theme-light.card-layout-open-light).workspace-vault-selector-card.workspace-vault-selector-position .workspace-split.mod-left-split .mk-sidebar {
+    background-color: var(--background-mod-left-split, var(--titlebar-background)) !important;
+    padding-top: 10px;
+    border-top-left-radius: var(--card-border-radius-dark, 8px);
+    border-top-right-radius: var(--card-border-radius-dark, 8px);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+/*=============================================================================================*/
+/*=============================== RIGHT SIDEBAR HEADER POSITION ===============================*/
+/*=============================================================================================*/
+/*
+Center the elements in the right sidebar and add a background color to differentiate between header and the content
+*/
+
+.workspace-split.mod-right-split .workspace-tab-header-container {
+    justify-content: center;
+    padding-right: 0;
+}
+.workspace-tabs.mod-top.mod-top-right-space .workspace-tab-header-container {
+    justify-content: initial;
+}
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header-spacer {
+    flex-grow: unset;
+}
+
+
+.progress-color-reverse {
+    --progress-color-1: var(--color-d-green-30) !important;
+    --progress-color-2: var(--color-d-yellow-20) !important;
+    --progress-color-3: var(--color-d-orange-20) !important;
+    --progress-color-4: var(--color-d-red-20) !important;
+    --progress-color-5: var(--color-d-red-40) !important;
+}
+
+/*=============================================================================================*/
+/*======================================= CALLOUT LAYOUT ======================================*/
+/*=============================================================================================*/
+
+div.callout .callout-title .callout-icon svg {
+    height: 22px !important;
+    width: 22px !important;
+}
+div.callout > .callout-content {background-color: var(--background-secondary);}
+.callout .callout-fold {margin-left: auto;}
+.callout-title {gap: var(--size-4-2);}
+
+/*=============================================================================================*/
+/*===================================== METADATA CONTAINER ====================================*/
+/*=============================================================================================*/
+
+body {
+    --metadata-border-width: 1px;
+    --metadata-divider-width: 0px;
+    --metadata-border-radius: var(--radius-m);
+    --metadata-property-radius: calc(var(--radius-m) - 1px);
+    --metadata-container-padding: var(--size-4-3) var(--size-4-3);
+    --metadata-background: color-mix(in srgb, var(--background-primary) 50%, var(--background-primary-alt));
+    --metadata-properties-title-color-hover: var(--text-muted);
+    --metadata-properties-title-color: var(--text-faint);
+    --metadata-input-text-color: var(--text-normal);
+    --metadata-input-font-size: var(--font-smaller);
+}
+.markdown-source-view.is-live-preview.show-properties .metadata-container[data-property-count="0"], 
+.markdown-preview-view.show-properties .metadata-container[data-property-count="0"] {
+    display: none;
+}
+.metadata-container {
+    padding: var(--metadata-container-padding);
+    margin-left: 7px;
+}
+.metadata-properties-heading:not(.is-collapsed) {
+    margin-bottom: var(--size-4-2);
+}
+.metadata-properties-heading {
+    line-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 0;
+}
+.metadata-properties-heading .collapse-indicator::before {
+    content: none;
+}
+.metadata-properties-heading .collapse-indicator {
+    position: unset;
+    order: 2;
+    opacity: 1;
+    left: unset;
+}
+.metadata-properties-heading:hover {
+    cursor: var(--cursor);
+}
+.metadata-properties-heading:hover .metadata-properties-title {
+    color: var(--metadata-properties-title-color-hover);
+}
+.metadata-properties-heading .metadata-properties-title {
+    color: var(--metadata-properties-title-color);
+    font-weight: var(--font-semibold);
+    font-size: calc(var(--font-smallest) - 0.1em);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-left: var(--size-4-1);
+    transition: color var(--anim-duration-superfast) var(--anim-motion-smooth);
+}
+
+
+body:not(.file-icon-remove).workspace-explorer-file-icon-display .workspace-leaf-content[data-type="file-explorer"] .nav-file-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3e%3cg stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.333'%3e%3cpath d='M9.667 1.333H4a1.333 1.333 0 0 0-1.333 1.334v10.666A1.333 1.333 0 0 0 4 14.667h8a1.333 1.333 0 0 0 1.333-1.334V5L9.667 1.333Z'/%3e%3cpath d='M9.333 1.333v4h4'/%3e%3c/g%3e%3c/svg%3e");
+}
+body:not(.file-icon-remove).workspace-explorer-file-icon-display .workspace-leaf-content[data-type="file-explorer"] :is(.nav-file > .tree-item-self:has(>div.iconize-icon).nav-file-title)::before {
+    display: none;
+}
+
+body:not(.file-icon-remove).workspace-explorer-folder-icon-display .workspace-leaf-content:is([data-type="bookmarks"], [data-type="file-explorer"]):has(div.iconize-icon) .tree-item-icon.collapse-icon svg.svg-icon {
+    color: currentColor;
+}
+body:not(.file-icon-remove).workspace-explorer-folder-icon-display .workspace-leaf-content[data-type="file-explorer"] .nav-folder > .tree-item-self:has(>div.iconize-icon) .tree-item-icon.collapse-icon {
+    -webkit-mask-image: unset;
+    background-color: unset;
+}
+
+body:not(.file-icon-remove).workspace-explorer-folder-icon-display .workspace-leaf-content[data-type="file-explorer"] .nav-folder > .tree-item-self:has(>div.iconize-icon) .tree-item-icon.collapse-icon {
+    -webkit-mask-image: unset;
+    background-color: unset;
+}
+
+/*===============================================================
+* RAINBOW FOLDERS (Customized by MATrsx)
+* Original Author: AnubisNekhet
+* https://www.buymeacoffee.com/anubisnekhet
+* https://github.com/AnubisNekhet/AnuPpuccin/blob/main/theme.css
+*===============================================================*/
+body {
+    --anp-rainbow-folder-bg-opacity: 1;
+    --ctp-rosewater: var(--ctp-custom-rosewater, var(--ctp-ext-rosewater, 242, 213, 207));
+    --ctp-flamingo: var(--ctp-custom-flamingo, var(--ctp-ext-flamingo, 238, 190, 190));
+    --ctp-pink: var(--ctp-custom-pink, var(--ctp-ext-pink, 244, 184, 228));
+    --ctp-mauve: var(--ctp-custom-mauve, var(--ctp-ext-mauve, 202, 158, 230));
+    --ctp-red: var(--ctp-custom-red, var(--ctp-ext-red, 231, 130, 132));
+    --ctp-maroon: var(--ctp-custom-maroon, var(--ctp-ext-maroon, 234, 153, 156));
+    --ctp-peach: var(--ctp-custom-peach, var(--ctp-ext-peach, 239, 159, 118));
+    --ctp-yellow: var(--ctp-custom-yellow, var(--ctp-ext-yellow, 229, 200, 144));
+    --ctp-green: var(--ctp-custom-green, var(--ctp-ext-green, 166, 209, 137));
+    --ctp-teal: var(--ctp-custom-teal, var(--ctp-ext-teal, 129, 200, 190));
+    --ctp-sky: var(--ctp-custom-sky, var(--ctp-ext-sky, 153, 209, 219));
+    --ctp-sapphire: var(--ctp-custom-sapphire, var(--ctp-ext-sapphire, 133, 193, 220));
+    --ctp-blue: var(--ctp-custom-blue, var(--ctp-ext-blue, 140, 170, 238));
+    --ctp-lavender: var(--ctp-custom-lavender, var(--ctp-ext-lavender, 186, 187, 241));
+
+    --ctp-mauve: var(--ctp-custom-mauve, var(--ctp-ext-mauve, 202, 158, 230));
+    --ctp-crust: var(--ctp-custom-crust, var(--ctp-ext-crust, 255, 255, 255));
+}
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder {
+    transition: background-color 0.4s;
+    background-color: rgba(var(--rainbow-folder-color), var(--anp-rainbow-folder-bg-opacity));
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+.nav-file-title, .nav-folder-title {
+    margin-bottom: var(--size-2-1) !important;
+}
+.workspace-leaf-content .tree-item-self :is(.tree-item-flair, .tree-item-inner) {
+    line-height: unset;
+}
+.nav-folder-title-content {
+    flex-grow: 1;
+}
+.tree-item-self .tree-item-icon {
+    height: var(--size-4-4);
+    --icon-color: var(--text-muted);
+}
+
+/*---------------------------------------------------------------
+* RAIBOW FOLDER VARIABLE
+
+* --rainbow-folder-color is a raw rgb variable whose value
+* is cycled per child folder in a folder tree.
+* Applying "inherit" to every child folder excluding first-order
+* child folders results in folders "inheriting" their parent
+* folder colors.
+*---------------------------------------------------------------*/
+.nav-folder-children > .nav-folder:nth-child(11n+2),
+.nav-files-container > div > .nav-folder:nth-child(11n+2),
+[data-type=bookmarks] .tree-item:nth-child(11n+2) {
+  --rainbow-folder-color: var(--ctp-red);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+3),
+.nav-files-container > div > .nav-folder:nth-child(11n+3),
+[data-type=bookmarks] .tree-item:nth-child(11n+3) {
+  --rainbow-folder-color: var(--ctp-maroon);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+4),
+.nav-files-container > div > .nav-folder:nth-child(11n+4),
+[data-type=bookmarks] .tree-item:nth-child(11n+4) {
+  --rainbow-folder-color: var(--ctp-peach);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+5),
+.nav-files-container > div > .nav-folder:nth-child(11n+5),
+[data-type=bookmarks] .tree-item:nth-child(11n+5) {
+  --rainbow-folder-color: var(--ctp-yellow);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+6),
+.nav-files-container > div > .nav-folder:nth-child(11n+6),
+[data-type=bookmarks] .tree-item:nth-child(11n+6) {
+  --rainbow-folder-color: var(--ctp-green);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+7),
+.nav-files-container > div > .nav-folder:nth-child(11n+7),
+[data-type=bookmarks] .tree-item:nth-child(11n+7) {
+  --rainbow-folder-color: var(--ctp-teal);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+8),
+.nav-files-container > div > .nav-folder:nth-child(11n+8),
+[data-type=bookmarks] .tree-item:nth-child(11n+8) {
+  --rainbow-folder-color: var(--ctp-sky);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+9),
+.nav-files-container > div > .nav-folder:nth-child(11n+9),
+[data-type=bookmarks] .tree-item:nth-child(11n+9) {
+  --rainbow-folder-color: var(--ctp-sapphire);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+10),
+.nav-files-container > div > .nav-folder:nth-child(11n+10),
+[data-type=bookmarks] .tree-item:nth-child(11n+10) {
+  --rainbow-folder-color: var(--ctp-blue);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+11),
+.nav-files-container > div > .nav-folder:nth-child(11n+11),
+[data-type=bookmarks] .tree-item:nth-child(11n+11) {
+  --rainbow-folder-color: var(--ctp-lavender);
+}
+.nav-folder-children > .nav-folder:nth-child(11n+12),
+.nav-files-container > div > .nav-folder:nth-child(11n+12),
+[data-type=bookmarks] .tree-item:nth-child(11n+12) {
+  --rainbow-folder-color: var(--ctp-mauve);
+}
+
+.anp-rainbow-subfolder-color-toggle .nav-files-container .nav-folder.nav-folder .nav-folder,
+.anp-rainbow-subfolder-color-toggle [data-type=bookmarks] .tree-item .tree-item {
+  --rainbow-folder-color: inherit;
+}
+
+/*---------------------------------------------------------------
+* FULL RAINBOW STYLE
+*---------------------------------------------------------------*/
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-folder-title,
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-file-title,
+.anp-full-rainbow-color-toggle .nav-files-container .collapse-icon svg.svg-icon,
+.anp-full-rainbow-color-toggle .tree-item-self .tree-item-icon,
+.anp-full-rainbow-color-toggle [data-type=bookmarks] .tree-item .tree-item-inner {
+  color: var(--anp-full-rainbow-text-inverted, var(--background-primary));
+  --icon-color: var(--anp-full-rainbow-text-inverted,
+          var(--background-primary));
+}
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-files-container > div > .nav-folder-children > .nav-file .nav-file-title {
+  color: var(--anp-full-rainbow-text-inverted, var(--background-primary));
+}
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-dark .nav-files-container > .nav-folder-children > .nav-file {
+  background-color: rgba(var(--ctp-text), var(--anp-rainbow-folder-bg-opacity));
+}
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-light .nav-files-container > div > .nav-file {
+  background-color: rgba(var(--ctp-overlay1), var(--anp-rainbow-folder-bg-opacity));
+}
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-files-container > div > .nav-file,
+.anp-full-rainbow-color-toggle [data-type=bookmarks] .tree-item {
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div > .nav-folder .nav-folder-title:hover,
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div .nav-file .nav-file-title:hover {
+  background-color: rgba(var(--ctp-base), 0.1);
+}
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div > .nav-folder .nav-file-title.is-active {
+  border-color: rgba(var(--ctp-base), 0.2);
+  background-color: rgba(var(--ctp-base), 0.2);
+}
+.anp-full-rainbow-color-toggle .nav-file {
+  overflow-y: hidden;
+}
+.anp-full-rainbow-color-toggle .nav-file-title-content.is-being-renamed,
+.anp-full-rainbow-color-toggle .nav-folder-title-content.is-being-renamed {
+  cursor: text;
+  border-color: var(--interactive-accent);
+  background-color: rgba(var(--ctp-crust), 0.2);
+}
+.anp-full-rainbow-color-toggle .nav-file-title-content.is-being-renamed::selection,
+.anp-full-rainbow-color-toggle .nav-folder-title-content.is-being-renamed::selection {
+  background-color: hsla(var(--color-accent-hsl), 0.2);
+}
+.anp-full-rainbow-color-toggle .nav-file-title-content.is-being-renamed::selection {
+  background-color: rgba(var(--ctp-accent), 0.2);
+}
+.anp-full-rainbow-color-toggle .nav-files-container .nav-folder > .nav-folder-children {
+  padding: 0 5px 0 5px;
+}
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder,
+.anp-full-rainbow-color-toggle [data-type=bookmarks] .tree-item {
+  transition: background-color 0.4s;
+  background-color: rgba(var(--rainbow-folder-color), var(--anp-rainbow-folder-bg-opacity));
+  margin-bottom: 2px;
+  border-radius: 5px;
+}
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-folder-children {
+  border-color: rgba(var(--ctp-crust), 0.4);
+}
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file.has-focus {
+  background-color: rgba(var(--ctp-text), var(--anp-rainbow-folder-bg-opacity));
+  border-left: none;
+  border-color: rgb(var(--ctp-accent));
+}
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file > .nav-file-title, .anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file.has-focus > .nav-file-title {
+  margin-bottom: 0;
+}
+.anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-file-title, .anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-file-title:focus-within,
+.anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-folder-title,
+.anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-folder-title:focus-within {
+  box-shadow: none;
+}
+
+.anp-full-rainbow-text-color-toggle-dark.theme-dark,
+.anp-full-rainbow-text-color-toggle-light.theme-light {
+  --anp-full-rainbow-text-inverted: rgb(var(--ctp-text));
+}
+
+/*---------------------------------------------------------------
+* SIMPLE RAINBOW STYLE
+*---------------------------------------------------------------*/
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle .nav-files-container > div > .nav-folder .nav-folder-title,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle [data-type=bookmarks] .tree-item .tree-item-inner {
+  transition: color 0.4s;
+  color: rgba(var(--rainbow-folder-color), var(--anp-simple-rainbow-opacity, 1));
+  --nav-item-background-hover: rgba(var(--rainbow-folder-color), 0.1);
+  --nav-item-background-active: rgba(var(--rainbow-folder-color), 0.1);
+}
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle .nav-folder.is-being-dragged-over {
+  background-color: rgba(var(--rainbow-folder-color), 0.1);
+}
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle .nav-files-container > div > .nav-folder .nav-folder-title:after,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle [data-type=bookmarks] .tree-item .tree-item-inner:after {
+  transition: color 0.4s;
+  color: rgba(var(--rainbow-folder-color), var(--anp-simple-rainbow-opacity, 1));
+  content: "⬤";
+  font-size: 10px;
+  position: relative;
+  margin-left: 4px;
+  opacity: 0.5;
+  top: -0.5px;
+}
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle [data-type=bookmarks] .tree-item .tree-item-inner {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-indentation-toggle .nav-files-container .nav-folder > .nav-folder-children,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-indentation-toggle [data-type=bookmarks] .tree-item .tree-item-children {
+  transition: color 0.4s;
+  border-color: rgba(var(--rainbow-folder-color), 0.5);
+}
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-collapse-icon-toggle .tree-item-self .tree-item-icon {
+  --icon-color: rgba(var(--rainbow-folder-color),
+          var(--anp-simple-rainbow-opacity, 1));
+  --nav-collapse-icon-color: rgba(var(--rainbow-folder-color),
+          var(--anp-simple-rainbow-opacity, 1));
+  --nav-collapse-icon-color-collapsed: rgba(var(--rainbow-folder-color),
+          var(--anp-simple-rainbow-opacity, 1));
+}

@@ -1,0 +1,249 @@
+
+div[data-callout-metadata*="center"].callout {text-align: center !important;}
+div[data-callout-metadata*="middle"].callout {text-align: center !important; justify-content: center; align-items: center;}
+
+
+div[data-callout-metadata*="center-tl"].callout {text-align: center !important; justify-content: start; align-items: start;}
+div[data-callout-metadata*="center-tm"].callout {text-align: center !important; justify-content: center; align-items: start;}
+div[data-callout-metadata*="center-tr"].callout {text-align: center !important; justify-content: end; align-items: start;}
+div[data-callout-metadata*="center-middle"].callout {text-align: center !important; justify-content: center; align-items: center;}
+div[data-callout-metadata*="center-bl"].callout {text-align: center !important; justify-content: start; align-items: end;}
+div[data-callout-metadata*="center-bm"].callout {text-align: center !important; justify-content: center; align-items: end;}
+div[data-callout-metadata*="center-br"].callout {text-align: center !important; justify-content: end; align-items: end;}
+
+
+div[data-callout-metadata*="gap-0"].callout {gap: 0 !important;}
+
+
+div[data-callout-metadata*="icon-sm"].callout svg, 
+div[data-callout-metadata*="icon-sm"].callout img.emoji {width: 1.5em; height: 1.5em;} 
+div[data-callout-metadata*="icon-md"].callout svg, 
+div[data-callout-metadata*="icon-md"].callout img.emoji {width: 2em; height: 2em;} 
+div[data-callout-metadata*="icon-lg"].callout svg, 
+div[data-callout-metadata*="icon-lg"].callout img.emoji {width: 3em; height: 3em;}
+div[data-callout-metadata*="icon-xl"].callout svg, 
+div[data-callout-metadata*="icon-xl"].callout img.emoji {width: 4em; height: 4em;}
+div[data-callout-metadata*="icon-xxl"].callout svg, 
+div[data-callout-metadata*="icon-xxl"].callout .callout-content > p:only-child, 
+div[data-callout-metadata*="icon-xxl"].callout img.emoji {width: 5em; height: 5em;}
+
+div[data-callout-metadata*="icon-xs"].callout  .callout-content > p:only-child {font-size: 1em !important;}
+div[data-callout-metadata*="icon-sm"].callout  .callout-content > p:only-child {font-size: 1.5em !important;}
+div[data-callout-metadata*="icon-md"].callout  .callout-content > p:only-child {font-size: 2em !important;}  
+div[data-callout-metadata*="icon-lg"].callout  .callout-content > p:only-child {font-size: 3em !important;}
+div[data-callout-metadata*="icon-xl"].callout  .callout-content > p:only-child {font-size: 4em !important;}
+div[data-callout-metadata*="icon-xxl"].callout .callout-content > p:only-child {font-size: 5em !important;}
+
+div[data-callout="multi-column"].callout .callout .callout-title {
+    margin-right: 0;
+}
+
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-1"] { flex: 1; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-2"] { flex: 2; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-3"] { flex: 3; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-4"] { flex: 4; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-5"] { flex: 5; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-6"] { flex: 6; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-7"] { flex: 7; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-8"] { flex: 8; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-9"] { flex: 9; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-10"] { flex: 10; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-11"] { flex: 11; }
+div[data-callout="multi-column"].callout > .callout-content > div[data-callout-metadata*="flex-12"] { flex: 12; }
+
+.markdown-source-view.mod-cm6 .cm-content>[contenteditable=false] {
+    contain: unset !important;
+}
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+    overflow: visible;
+}
+
+/* aside functionality as a custom callout */
+:is(.markdown-source-view .cm-callout, div:not([class])):has(
+    > .callout[data-callout-metadata*="aside"]
+  ){
+  position: relative;
+  overflow: visible;
+  contain: none !important;
+}
+
+.workspace-tab-container {
+  container-name: container1;
+  container-type: inline-size;
+}
+
+@container container1 (min-width: 1100px) {
+    .callout[data-callout-metadata*="aside"] {
+        --aside-width: 200px;
+        --aside-offset: var(--size-4-4);
+        position: absolute;
+    }
+    .callout[data-callout-metadata*="aside"] > .callout-content {
+        z-index: 2 !important;
+    }
+    .callout[data-callout-metadata*="aside"] .code-styler-pre-parent {
+        margin-bottom: 0;
+    }
+    .callout[data-callout-metadata*="aside-l"] {
+        left: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+        right: calc(100% + var(--aside-offset));
+    }
+    .callout[data-callout-metadata*="aside-r"] {
+        left: calc(100% + var(--aside-offset));
+        right: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+    }
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6
+            .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+            overflow: visible;
+        }
+    }
+}
+
+.workspace-leaf-content {
+  container-name: container2;
+  container-type: inline-size;
+}
+
+@container container2 (min-width: 1200px) {
+    .callout[data-callout-metadata*="aside"] {
+        --aside-width: 250px;
+        --aside-offset: var(--size-4-4);
+        position: absolute;
+    }
+    .callout[data-callout-metadata*="aside"] > .callout-content {
+        z-index: 2 !important;
+    }
+    .callout[data-callout-metadata*="aside"] .code-styler-pre-parent {
+        margin-bottom: 0;
+    }
+    .callout[data-callout-metadata*="aside-l"] {
+        left: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+        right: calc(100% + var(--aside-offset));
+    }
+    .callout[data-callout-metadata*="aside-r"] {
+        left: calc(100% + var(--aside-offset));
+        right: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+    }
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6
+            .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+            overflow: visible;
+        }
+    }
+}
+
+.markdown-preview-view,
+.markdown-source-view.is-live-preview {
+  container-name: container3;
+  container-type: inline-size;
+}
+
+@container container3 (min-width: 1300px) {
+    .callout[data-callout-metadata*="aside"] {
+        --aside-width: 300px;
+        --aside-offset: var(--size-4-4);
+        position: absolute;
+    }
+    .callout[data-callout-metadata*="aside"] > .callout-content {
+        z-index: 2 !important;
+    }
+    .callout[data-callout-metadata*="aside"] .code-styler-pre-parent {
+        margin-bottom: 0;
+    }
+    .callout[data-callout-metadata*="aside-l"] {
+        left: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+        right: calc(100% + var(--aside-offset));
+    }
+    .callout[data-callout-metadata*="aside-r"] {
+        left: calc(100% + var(--aside-offset));
+        right: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+    }
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6
+            .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+            overflow: visible;
+        }
+    }
+}
+
+.view-content {
+  container-name: container4;
+  container-type: inline-size;
+}
+
+@container container4 (min-width: 1400px) {
+    .callout[data-callout-metadata*="aside"] {
+        --aside-width: 350px;
+        --aside-offset: var(--size-4-4);
+        position: absolute;
+    }
+    .callout[data-callout-metadata*="aside"] > .callout-content {
+        z-index: 2 !important;
+    }
+    .callout[data-callout-metadata*="aside"] .code-styler-pre-parent {
+        margin-bottom: 0;
+    }
+    .callout[data-callout-metadata*="aside-l"] {
+        left: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+        right: calc(100% + var(--aside-offset));
+    }
+    .callout[data-callout-metadata*="aside-r"] {
+        left: calc(100% + var(--aside-offset));
+        right: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+    }
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6
+            .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+            overflow: visible;
+        }
+    }
+}
+
+.cm-editor,
+.markdown-reading-view {
+  container-name: container5;
+  container-type: inline-size;
+}
+
+@container container5 (min-width: 1500px) {
+    .callout[data-callout-metadata*="aside"] {
+        --aside-width: 400px;
+        --aside-offset: var(--size-4-4);
+        position: absolute;
+    }
+    .callout[data-callout-metadata*="aside"] > .callout-content {
+        z-index: 2 !important;
+    }
+    .callout[data-callout-metadata*="aside"] .code-styler-pre-parent {
+        margin-bottom: 0;
+    }
+    .callout[data-callout-metadata*="aside-l"] {
+        left: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+        right: calc(100% + var(--aside-offset));
+    }
+    .callout[data-callout-metadata*="aside-r"] {
+        left: calc(100% + var(--aside-offset));
+        right: calc(-1 * (var(--aside-width) + var(--aside-offset)));
+    }
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6
+            .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+            overflow: visible;
+        }
+    }
+}
+
+.callout[data-callout-metadata*="width-250"] {
+    --aside-width: 250px;
+    margin-left: auto !important;
+}
+.callout[data-callout-metadata*="width-300"] {
+    --aside-width: 300px;
+    margin-left: auto !important;
+}
+.callout[data-callout-metadata*="width-350"] {
+    --aside-width: 350px;
+}
+
+

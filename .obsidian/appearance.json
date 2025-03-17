@@ -1,0 +1,17 @@
+{
+  "cssTheme": "Border",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "frontmatter",
+    "inline",
+    "MCL Wide Views",
+    "MCL Multi Column",
+    "MCL Gallery Cards",
+    "callouts",
+    "headers",
+    "list-cards",
+    "theme",
+    "MCL Custom"
+  ],
+  "accentColor": ""
+}

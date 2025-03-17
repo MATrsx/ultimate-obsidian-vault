@@ -1,0 +1,26 @@
+
+# Obsibrain Plugin
+.obsidian/plugins/obsibrain-plugin
+
+# Banner Images
+09 - Meta/92 - Banners/*
+
+.trash/
+.DS_Store
+*.bak
+
+*.zip
+!.obsidian/icons/*.zip
+
+# Ignore all SVG files in the icons/ directory and subdirectories
+.obsidian/icons/*/*.svg
+
+# Ignore linked goodnotes
+99 - Meta/Goodnotes
+Goodnotes/
+
+# Ignore MakeMd files and directories
+.space/
+Tags/
+.makemd/
+.vault-stats

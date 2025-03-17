@@ -1,0 +1,431 @@
+/*=============================================================================================*/
+/*====================================== COLORED HEADINGS =====================================*/
+/*=============================================================================================*/
+/*
+Add the option to assign each heading type (1-6) a unique color to better differentiate between them
+*/
+
+:root[saved-theme=light] .red-headings {
+    --h1-color: #ffcccc; /* Light Red */
+    --h2-color: #ff9999; /* Soft Red */
+    --h3-color: #ff6666; /* Moderate Red */
+    --h4-color: #ff3333; /* Vibrant Red */
+    --h5-color: #ff0000; /* Standard Red */
+    --h6-color: #cc0000; /* Dark Red */
+}
+:root[saved-theme=dark] .red-headings{
+    --h1-color: #ff6666; /* Dark Light Red */
+    --h2-color: #ff4d4d; /* Dark Soft Red */
+    --h3-color: #ff3333; /* Dark Moderate Red */
+    --h4-color: #ff1a1a; /* Dark Vibrant Red */
+    --h5-color: #ff0000; /* Dark Standard Red */
+    --h6-color: #cc0000; /* Dark Red */
+}
+
+:root[saved-theme=light] .pink-headings {
+    --h1-color: #ffccff; /* Light Pink */
+    --h2-color: #ff99ff; /* Soft Pink */
+    --h3-color: #ff66ff; /* Moderate Pink */
+    --h4-color: #ff33ff; /* Vibrant Pink */
+    --h5-color: #ff00ff; /* Standard Pink */
+    --h6-color: #cc00cc; /* Dark Pink */
+}
+:root[saved-theme=dark] .pink-headings {
+    --h1-color: #ff66ff; /* Dark Light Pink */
+    --h2-color: #ff4dff; /* Dark Soft Pink */
+    --h3-color: #ff33ff; /* Dark Moderate Pink */
+    --h4-color: #ff1aff; /* Dark Vibrant Pink */
+    --h5-color: #ff00ff; /* Dark Standard Pink */
+    --h6-color: #cc00cc; /* Dark Pink */
+}
+
+:root[saved-theme=light] .purple-headings {
+    --h1-color: #e5ccff; /* Light Purple */
+    --h2-color: #d299ff; /* Soft Purple */
+    --h3-color: #bf66ff; /* Moderate Purple */
+    --h4-color: #ac33ff; /* Vibrant Purple */
+    --h5-color: #9900ff; /* Standard Purple */
+    --h6-color: #6600cc; /* Dark Purple */
+}
+:root[saved-theme=dark] .purple-headings {
+    --h1-color: #c266ff; /* Dark Light Purple */
+    --h2-color: #a94dff; /* Dark Soft Purple */
+    --h3-color: #8f33ff; /* Dark Moderate Purple */
+    --h4-color: #751aff; /* Dark Vibrant Purple */
+    --h5-color: #5c00e6; /* Dark Standard Purple */
+    --h6-color: #400099; /* Dark Purple */
+}
+
+:root[saved-theme=light] .indigo-headings {
+    --h1-color: #e6e6ff; /* Light Indigo */
+    --h2-color: #ccccff; /* Soft Indigo */
+    --h3-color: #b3b3ff; /* Moderate Indigo */
+    --h4-color: #9999ff; /* Vibrant Indigo */
+    --h5-color: #8080ff; /* Standard Indigo */
+    --h6-color: #6666cc; /* Dark Indigo */
+}
+:root[saved-theme=dark] .indigo-headings {
+    --h1-color: #9999ff; /* Dark Light Indigo */
+    --h2-color: #8080ff; /* Dark Soft Indigo */
+    --h3-color: #6666ff; /* Dark Moderate Indigo */
+    --h4-color: #4d4dff; /* Dark Vibrant Indigo */
+    --h5-color: #3333ff; /* Dark Standard Indigo */
+    --h6-color: #1a1aff; /* Dark Indigo */
+}
+
+:root[saved-theme=light] .blue-headings {
+    --h1-color: #cceeff; /* Light Blue */
+    --h2-color: #99ddff; /* Soft Blue */
+    --h3-color: #66ccff; /* Moderate Blue */
+    --h4-color: #33bbff; /* Vibrant Blue */
+    --h5-color: #00aaff; /* Standard Blue */
+    --h6-color: #0088cc; /* Dark Blue */
+}
+:root[saved-theme=dark] .blue-headings{
+    --h1-color: #66b3ff; /* Dark Light Blue */
+    --h2-color: #4da6ff; /* Dark Soft Blue */
+    --h3-color: #3399ff; /* Dark Moderate Blue */
+    --h4-color: #1a8cff; /* Dark Vibrant Blue */
+    --h5-color: #007acc; /* Dark Standard Blue */
+    --h6-color: #005b99; /* Dark Blue */
+}
+
+:root[saved-theme=light] .cyan-headings {
+    --h1-color: #ccffff; /* Light Cyan */
+    --h2-color: #99ffff; /* Soft Cyan */
+    --h3-color: #66ffff; /* Moderate Cyan */
+    --h4-color: #33ffff; /* Vibrant Cyan */
+    --h5-color: #00ffff; /* Standard Cyan */
+    --h6-color: #00cccc; /* Dark Cyan */
+}
+:root[saved-theme=dark] .cyan-headings {
+    --h1-color: #66ffff; /* Dark Light Cyan */
+    --h2-color: #4dffff; /* Dark Soft Cyan */
+    --h3-color: #33ffff; /* Dark Moderate Cyan */
+    --h4-color: #1affff; /* Dark Vibrant Cyan */
+    --h5-color: #00e6e6; /* Dark Standard Cyan */
+    --h6-color: #00b3b3; /* Dark Cyan */
+}
+
+:root[saved-theme=light] .teal-headings {
+    --h1-color: #ccf2f4; /* Light Teal */
+    --h2-color: #99e6e8; /* Soft Teal */
+    --h3-color: #66d9dd; /* Moderate Teal */
+    --h4-color: #33ccd1; /* Vibrant Teal */
+    --h5-color: #00c0c6; /* Standard Teal */
+    --h6-color: #00999e; /* Dark Teal */
+}
+:root[saved-theme=dark] .teal-headings {
+    --h1-color: #66d9dd; /* Dark Light Teal */
+    --h2-color: #33ccd1; /* Dark Soft Teal */
+    --h3-color: #00c0c6; /* Dark Moderate Teal */
+    --h4-color: #00a6ac; /* Dark Vibrant Teal */
+    --h5-color: #00898f; /* Dark Standard Teal */
+    --h6-color: #006d72; /* Dark Teal */
+}
+
+:root[saved-theme=light] .green-headings {
+    --h1-color: #ccffcc; /* Light Green */
+    --h2-color: #99ff99; /* Soft Green */
+    --h3-color: #66ff66; /* Moderate Green */
+    --h4-color: #33ff33; /* Vibrant Green */
+    --h5-color: #00ff00; /* Standard Green */
+    --h6-color: #00cc00; /* Dark Green */
+}
+:root[saved-theme=dark] .green-headings {
+    --h1-color: #66ff66; /* Dark Light Green */
+    --h2-color: #4dff4d; /* Dark Soft Green */
+    --h3-color: #33ff33; /* Dark Moderate Green */
+    --h4-color: #1aff1a; /* Dark Vibrant Green */
+    --h5-color: #00e600; /* Dark Standard Green */
+    --h6-color: #009900; /* Dark Green */
+}
+
+:root[saved-theme=light] .lime-headings {
+    --h1-color: #e6ffcc; /* Light Lime */
+    --h2-color: #ccff99; /* Soft Lime */
+    --h3-color: #b3ff66; /* Moderate Lime */
+    --h4-color: #99ff33; /* Vibrant Lime */
+    --h5-color: #80ff00; /* Standard Lime */
+    --h6-color: #66cc00; /* Dark Lime */
+}
+:root[saved-theme=dark] .lime-headings {
+    --h1-color: #b3ff66; /* Dark Light Lime */
+    --h2-color: #99ff33; /* Dark Soft Lime */
+    --h3-color: #80ff00; /* Dark Moderate Lime */
+    --h4-color: #66cc00; /* Dark Vibrant Lime */
+    --h5-color: #4d9900; /* Dark Standard Lime */
+    --h6-color: #336600; /* Dark Lime */
+}
+
+:root[saved-theme=light] .yellow-headings {
+    --h1-color: #ffffcc; /* Light Yellow */
+    --h2-color: #ffff99; /* Soft Yellow */
+    --h3-color: #ffff66; /* Moderate Yellow */
+    --h4-color: #ffff33; /* Vibrant Yellow */
+    --h5-color: #ffff00; /* Standard Yellow */
+    --h6-color: #cccc00; /* Dark Yellow */
+}
+:root[saved-theme=dark] .yellow-headings {
+    --h1-color: #ffff66; /* Dark Light Yellow */
+    --h2-color: #ffff4d; /* Dark Soft Yellow */
+    --h3-color: #ffff33; /* Dark Moderate Yellow */
+    --h4-color: #ffff1a; /* Dark Vibrant Yellow */
+    --h5-color: #ffff00; /* Dark Standard Yellow */
+    --h6-color: #cccc00; /* Dark Yellow */
+}
+
+:root[saved-theme=light] .amber-headings {
+    --h1-color: #fff2cc; /* Light Amber */
+    --h2-color: #ffe699; /* Soft Amber */
+    --h3-color: #ffdb66; /* Moderate Amber */
+    --h4-color: #ffd233; /* Vibrant Amber */
+    --h5-color: #ffc800; /* Standard Amber */
+    --h6-color: #cc9e00; /* Dark Amber */
+}
+:root[saved-theme=dark] .amber-headings {
+    --h1-color: #ffdb66; /* Dark Light Amber */
+    --h2-color: #ffd233; /* Dark Soft Amber */
+    --h3-color: #ffc800; /* Dark Moderate Amber */
+    --h4-color: #cca600; /* Dark Vibrant Amber */
+    --h5-color: #996800; /* Dark Standard Amber */
+    --h6-color: #664400; /* Dark Amber */
+}
+
+:root[saved-theme=light] .orange-headings {
+    --h1-color: #ffe0cc; /* Light Orange */
+    --h2-color: #ffcc99; /* Soft Orange */
+    --h3-color: #ffb266; /* Moderate Orange */
+    --h4-color: #ff9933; /* Vibrant Orange */
+    --h5-color: #ff8000; /* Standard Orange */
+    --h6-color: #cc6600; /* Dark Orange */
+}
+:root[saved-theme=dark] .orange-headings {
+    --h1-color: #ff9966; /* Dark Light Orange */
+    --h2-color: #ff8533; /* Dark Soft Orange */
+    --h3-color: #ff7300; /* Dark Moderate Orange */
+    --h4-color: #ff5f00; /* Dark Vibrant Orange */
+    --h5-color: #ff4b00; /* Dark Standard Orange */
+    --h6-color: #cc3a00; /* Dark Orange */
+}
+
+/* Special Headings */
+
+:root[saved-theme=light] .rainbow-headings {
+    --h1-color: #ff4d4d; /* Red */
+    --h2-color: #ff9933; /* Orange */
+    --h3-color: #ffff66; /* Yellow */
+    --h4-color: #66ff66; /* Green */
+    --h5-color: #6666ff; /* Indigo */
+    --h6-color: #c266ff; /* Violet */
+}
+:root[saved-theme=dark] .rainbow-headings {
+    --h1-color: #ff6666; /* Red */
+    --h2-color: #ffad66; /* Orange */
+    --h3-color: #ffff99; /* Yellow */
+    --h4-color: #99ff99; /* Green */
+    --h5-color: #9999ff; /* Indigo */
+    --h6-color: #d299ff; /* Violet */
+}
+
+:root[saved-theme=light] .pastel-headings {
+    --h1-color: #ffadad; /* Light Pink */
+    --h2-color: #ffd6a5; /* Light Peach */
+    --h3-color: #fdffb6; /* Light Yellow */
+    --h4-color: #caffbf; /* Light Mint */
+    --h5-color: #9bf6ff; /* Light Cyan */
+    --h6-color: #a0c4ff; /* Light Blue */
+}
+:root[saved-theme=dark] .pastel-headings {
+    --h1-color: #ff9a9a; /* Dark Pink */
+    --h2-color: #ffb585; /* Dark Peach */
+    --h3-color: #faff8f; /* Dark Yellow */
+    --h4-color: #ace5a0; /* Dark Mint */
+    --h5-color: #7fe1ff; /* Dark Cyan */
+    --h6-color: #7ca9ff; /* Dark Blue */
+}
+
+:root[saved-theme=light] .monochrome-headings {
+    --h1-color: #000000; /* Black */
+    --h2-color: #333333; /* Dark Gray */
+    --h3-color: #666666; /* Gray */
+    --h4-color: #999999; /* Light Gray */
+    --h5-color: #cccccc; /* Lighter Gray */
+    --h6-color: #ffffff; /* White */
+}
+:root[saved-theme=dark] .monochrome-headings {
+    --h1-color: #ffffff; /* White */
+    --h2-color: #cccccc; /* Lighter Gray */
+    --h3-color: #999999; /* Light Gray */
+    --h4-color: #666666; /* Gray */
+    --h5-color: #333333; /* Dark Gray */
+    --h6-color: #000000; /* Black */
+}
+
+:root[saved-theme=light] .neon-headings {
+    --h1-color: #ff33cc; /* Neon Pink */
+    --h2-color: #33ff33; /* Neon Green */
+    --h3-color: #3399ff; /* Neon Blue */
+    --h4-color: #ff6633; /* Neon Orange */
+    --h5-color: #ffff33; /* Neon Yellow */
+    --h6-color: #9933ff; /* Neon Purple */
+}
+:root[saved-theme=dark] .neon-headings {
+    --h1-color: #ff66cc; /* Neon Pink */
+    --h2-color: #66ff66; /* Neon Green */
+    --h3-color: #66ccff; /* Neon Blue */
+    --h4-color: #ff9966; /* Neon Orange */
+    --h5-color: #ffff66; /* Neon Yellow */
+    --h6-color: #9966ff; /* Neon Purple */
+}
+/* Apply the neon effect */
+body:has(.neon-headings) h1.interactive-heading { text-shadow: 0 0 0.5em var(--h1-color); }
+body:has(.neon-headings) h2.interactive-heading { text-shadow: 0 0 0.5em var(--h2-color); }
+body:has(.neon-headings) h3.interactive-heading { text-shadow: 0 0 0.5em var(--h3-color); }
+body:has(.neon-headings) h4.interactive-heading { text-shadow: 0 0 0.5em var(--h4-color); }
+body:has(.neon-headings) h5.interactive-heading { text-shadow: 0 0 0.5em var(--h5-color); }
+body:has(.neon-headings) h6.interactive-heading { text-shadow: 0 0 0.5em var(--h6-color); }
+
+
+:root .theme-light .gradient-headings {
+    --h1-color: #e53935;
+    --h1-gradient: var(--h1-color), #f44336, #f06292;
+    --h2-color: #fb8c00;
+    --h2-gradient: var(--h2-color), #ff9800, #ffb300;
+    --h3-color: #fbc02d;
+    --h3-gradient: var(--h3-color), #ffc107, #ffca28;
+    --h4-color: #7cb342;
+    --h4-gradient: var(--h4-color), #9ccc65, #c0ca33;
+    --h5-color: #1e88e5;
+    --h5-gradient: var(--h5-color), #03a9f4, #26c6da;
+    --h6-color: #8e24aa;
+    --h6-gradient: var(--h6-color), #9c27b0, #9575cd;
+}
+:root .theme-dark .gradient-headings {
+    --h1-color: #ef5350;
+    --h1-gradient: var(--h1-color), #e57373, #f06292;
+    --h2-color: #ffa726;
+    --h2-gradient: var(--h2-color), #ffb74d, #ffcc80;
+    --h3-color: #ffd54f;
+    --h3-gradient: var(--h3-color), #ffd54f, #ffe082;
+    --h4-color: #a5d6a7;
+    --h4-gradient: var(--h4-color), #aed581, #e6ee9c;
+    --h5-color: #90caf9;
+    --h5-gradient: var(--h5-color), #80deea, #80cbc4;
+    --h6-color: #ce93d8;
+    --h6-gradient: var(--h6-color), #b39ddb, #f8bbd0;
+}
+/* Apply the gradient variables */
+body:has(.gradient-headings) h1.interactive-heading { --gradient-header: var(--h1-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+body:has(.gradient-headings) h2.interactive-heading { --gradient-header: var(--h2-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+body:has(.gradient-headings) h3.interactive-heading { --gradient-header: var(--h3-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+body:has(.gradient-headings) h4.interactive-heading { --gradient-header: var(--h4-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+body:has(.gradient-headings) h5.interactive-heading { --gradient-header: var(--h5-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+body:has(.gradient-headings) h6.interactive-heading { --gradient-header: var(--h6-gradient); background: linear-gradient(to right, var(--gradient-header)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+
+/* Indent headings v0.3.0
+   github.com/zamsyt */
+
+:root:root .markdown-source-view:not(.headings-no-indent) .cm-content > div:not(.hr):not(.cm-table-widget),
+.markdown-preview-view > * > div {
+  margin-left: calc(max(0, var(--heading-level) - 1) * 20px) !important; }
+
+.markdown-embed-content {
+  --heading-level: 0; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-1 ~ *, .markdown-preview-view div:has(> h1) ~ *,
+.markdown-source-view .HyperMD-header-1 ~ * {
+  --heading-level: 1; }
+
+.HyperMD-header-1, div:has(> h1) {
+  --heading-level: 1 !important; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-2 ~ *, .markdown-preview-view div:has(> h2) ~ *,
+.markdown-source-view .HyperMD-header-2 ~ * {
+  --heading-level: 2; }
+
+.HyperMD-header-2, div:has(> h2) {
+  --heading-level: 2 !important; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-3 ~ *, .markdown-preview-view div:has(> h3) ~ *,
+.markdown-source-view .HyperMD-header-3 ~ * {
+  --heading-level: 3; }
+
+.HyperMD-header-3, div:has(> h3) {
+  --heading-level: 3 !important; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-4 ~ *, .markdown-preview-view div:has(> h4) ~ *,
+.markdown-source-view .HyperMD-header-4 ~ * {
+  --heading-level: 4; }
+
+.HyperMD-header-4, div:has(> h4) {
+  --heading-level: 4 !important; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-5 ~ *, .markdown-preview-view div:has(> h5) ~ *,
+.markdown-source-view .HyperMD-header-5 ~ * {
+  --heading-level: 5; }
+
+.HyperMD-header-5, div:has(> h5) {
+  --heading-level: 5 !important; }
+
+.markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> [data-heading]) ~ div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header ~ .HyperMD-header-6 ~ *, .markdown-preview-view div:has(> h6) ~ *,
+.markdown-source-view .HyperMD-header-6 ~ * {
+  --heading-level: 6; }
+
+.HyperMD-header-6, div:has(> h6) {
+  --heading-level: 6 !important; }

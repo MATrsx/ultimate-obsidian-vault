@@ -1,0 +1,97 @@
+body:has(div.markdown-source-view.page-w-5) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-5) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-10) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-10) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-15) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-15) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-20) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-20) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-25) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-25) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-30) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-30) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-35) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-35) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-40) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-40) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-45) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-45) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-50) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-50) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-55) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-55) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-60) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-60) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-65) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-65) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-70) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-70) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-75) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-75) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-80) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-80) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-85) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-85) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-90) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-90) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-95) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-95) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line,
+body:has(div.markdown-source-view.page-w-100) .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+body:has(div.markdown-source-view.page-w-100) .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+    max-width: unset;
+}
+
+body:not(.is-mobile) .page-w-5   {--file-line-width: 5%}
+body:not(.is-mobile) .page-w-10  {--file-line-width: 10%}
+body:not(.is-mobile) .page-w-15  {--file-line-width: 15%}
+body:not(.is-mobile) .page-w-20  {--file-line-width: 20%}
+body:not(.is-mobile) .page-w-25  {--file-line-width: 25%}
+body:not(.is-mobile) .page-w-30  {--file-line-width: 30%}
+body:not(.is-mobile) .page-w-35  {--file-line-width: 35%}
+body:not(.is-mobile) .page-w-40  {--file-line-width: 40%}
+body:not(.is-mobile) .page-w-45  {--file-line-width: 45%}
+body:not(.is-mobile) .page-w-50  {--file-line-width: 50%}
+body:not(.is-mobile) .page-w-55  {--file-line-width: 55%}
+body:not(.is-mobile) .page-w-60  {--file-line-width: 60%}
+body:not(.is-mobile) .page-w-65  {--file-line-width: 65%}
+body:not(.is-mobile) .page-w-70  {--file-line-width: 70%}
+body:not(.is-mobile) .page-w-75  {--file-line-width: 75%}
+body:not(.is-mobile) .page-w-80  {--file-line-width: 80%}
+body:not(.is-mobile) .page-w-85  {--file-line-width: 85%}
+body:not(.is-mobile) .page-w-90  {--file-line-width: 90%}
+body:not(.is-mobile) .page-w-95  {--file-line-width: 95%}
+body:not(.is-mobile) .page-w-100 {--file-line-width: 100%}
+
+.mk-flow-5 .cm-line:has(.mk-floweditor-container), .mk-flow-5 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 5%;}
+.mk-flow-10 .cm-line:has(.mk-floweditor-container), .mk-flow-10 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 10%;}
+.mk-flow-15 .cm-line:has(.mk-floweditor-container), .mk-flow-15 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 15%;}
+.mk-flow-20 .cm-line:has(.mk-floweditor-container), .mk-flow-20 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 20%;}
+.mk-flow-25 .cm-line:has(.mk-floweditor-container), .mk-flow-25 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 25%;}
+.mk-flow-30 .cm-line:has(.mk-floweditor-container), .mk-flow-30 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 30%;}
+.mk-flow-35 .cm-line:has(.mk-floweditor-container), .mk-flow-35 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 35%;}
+.mk-flow-40 .cm-line:has(.mk-floweditor-container), .mk-flow-40 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 40%;}
+.mk-flow-45 .cm-line:has(.mk-floweditor-container), .mk-flow-45 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 45%;}
+.mk-flow-50 .cm-line:has(.mk-floweditor-container), .mk-flow-50 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 50%;}
+.mk-flow-55 .cm-line:has(.mk-floweditor-container), .mk-flow-55 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 55%;}
+.mk-flow-60 .cm-line:has(.mk-floweditor-container), .mk-flow-60 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 60%;}
+.mk-flow-65 .cm-line:has(.mk-floweditor-container), .mk-flow-65 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 65%;}
+.mk-flow-70 .cm-line:has(.mk-floweditor-container), .mk-flow-70 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 70%;}
+.mk-flow-75 .cm-line:has(.mk-floweditor-container), .mk-flow-75 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 75%;}
+.mk-flow-80 .cm-line:has(.mk-floweditor-container), .mk-flow-80 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 80%;}
+.mk-flow-85 .cm-line:has(.mk-floweditor-container), .mk-flow-85 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 85%;}
+.mk-flow-90 .cm-line:has(.mk-floweditor-container), .mk-flow-90 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 90%;}
+.mk-flow-95 .cm-line:has(.mk-floweditor-container), .mk-flow-95 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 95%;}
+.mk-flow-100 .cm-line:has(.mk-floweditor-container), .mk-flow-100 div.internal-embed.markdown-embed.inline-embed.is-loaded {width: 100%;}
+
+
+div[data-property-key="sticker"].metadata-property,
+div[data-property-key="icon"].metadata-property,
+div[data-property-key="iconColor"].metadata-property,
+div[data-property-key="banner"].metadata-property,
+div[data-property-key="banner-height"].metadata-property,
+div[data-property-key="banner-x"].metadata-property,
+div[data-property-key="banner-y"].metadata-property,
+div[data-property-key="banner_y"].metadata-property,
+div[data-property-key="banner-display"].metadata-property {
+    display: none;
+}

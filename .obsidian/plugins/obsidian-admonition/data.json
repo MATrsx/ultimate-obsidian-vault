@@ -1,0 +1,404 @@
+{
+  "userAdmonitions": {
+    "general": {
+      "type": "general",
+      "color": "182, 196, 182",
+      "icon": {
+        "name": "lucide-shapes",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "General",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "blank": {
+      "type": "blank",
+      "color": "182, 196, 182",
+      "icon": {
+        "name": "Ma-checkbox-blank-outline",
+        "type": "material"
+      },
+      "command": false,
+      "title": "Blank",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "note": {
+      "type": "note",
+      "color": "200, 175, 155",
+      "icon": {
+        "name": "lucide-sticker",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Note",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "abstract": {
+      "type": "abstract",
+      "color": "34, 152, 225",
+      "icon": {
+        "name": "lucide-loader",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Abstract",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "summary": {
+      "type": "summary",
+      "color": "234, 181, 52",
+      "icon": {
+        "name": "lucide-align-justify",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Summary",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "tldr": {
+      "type": "tldr",
+      "color": "240, 180, 225",
+      "icon": {
+        "name": "lucide-book-open-text",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "TL;DR",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "info": {
+      "type": "info",
+      "color": "68, 138, 255",
+      "icon": {
+        "name": "lucide-info",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Info",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "todo": {
+      "type": "todo",
+      "color": "68, 138, 255",
+      "icon": {
+        "name": "lucide-list-todo",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Todo",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "tip": {
+      "type": "tip",
+      "color": "70, 206, 185",
+      "icon": {
+        "name": "lucide-flame",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Tip",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "hint": {
+      "type": "hint",
+      "color": "70, 206, 185",
+      "icon": {
+        "name": "lucide-search-slash",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Hint",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "important": {
+      "type": "important",
+      "color": "246, 113, 118",
+      "icon": {
+        "name": "lucide-square-asterisk",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Important",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "success": {
+      "type": "success",
+      "color": "87, 200, 83",
+      "icon": {
+        "name": "lucide-check-check",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Success",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "check": {
+      "type": "check",
+      "color": "87, 200, 83",
+      "icon": {
+        "name": "lucide-check-check",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Check",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "done": {
+      "type": "done",
+      "color": "87, 200, 83",
+      "icon": {
+        "name": "lucide-check-check",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Done",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "question": {
+      "type": "question",
+      "color": "148, 255, 61",
+      "icon": {
+        "name": "lucide-help-circle",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Question",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "help": {
+      "type": "help",
+      "color": "148, 255, 61",
+      "icon": {
+        "name": "lucide-life-buoy",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Help",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "faq": {
+      "type": "faq",
+      "color": "144, 255, 61",
+      "icon": {
+        "name": "lucide-help-circle",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "FAQ",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "warning": {
+      "type": "warning",
+      "color": "255, 161, 32",
+      "icon": {
+        "name": "lucide-alert-triangle",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Warning",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "caution": {
+      "type": "caution",
+      "color": "255, 161, 32",
+      "icon": {
+        "name": "lucide-construction",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Caution",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "attention": {
+      "type": "attention",
+      "color": "255, 161, 32",
+      "icon": {
+        "name": "lucide-megaphone",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Attention",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "fail": {
+      "type": "fail",
+      "color": "226, 72, 86",
+      "icon": {
+        "name": "bolt",
+        "type": "font-awesome"
+      },
+      "command": false,
+      "title": "Fail",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "missing": {
+      "type": "missing",
+      "color": "226, 72, 86",
+      "icon": {
+        "name": "lucide-search",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Missing",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "danger": {
+      "type": "danger",
+      "color": "226, 72, 86",
+      "icon": {
+        "name": "lucide-shield-alert",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Danger",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "error": {
+      "type": "error",
+      "color": "226, 72, 86",
+      "icon": {
+        "name": "lucide-ban",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Error",
+      "injectColor": true,
+      "noTitle": false
+    },
+    "bug": {
+      "type": "bug",
+      "color": "225, 0, 255",
+      "icon": {
+        "name": "lucide-bug",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Bug",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "example": {
+      "type": "example",
+      "color": "255, 0, 255",
+      "icon": {
+        "name": "Hu-test-tube-01",
+        "type": "hugeicons"
+      },
+      "command": false,
+      "title": "Example",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "quote": {
+      "type": "quote",
+      "color": "158, 158, 158",
+      "icon": {
+        "name": "lucide-quote",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Quote",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "cite": {
+      "type": "cite",
+      "color": "158, 158, 158",
+      "icon": {
+        "name": "lucide-book-marked",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "Cite",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "history": {
+      "type": "history",
+      "color": "0, 225, 255",
+      "icon": {
+        "name": "lucide-history",
+        "type": "obsidian"
+      },
+      "command": false,
+      "title": "History",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
+    },
+    "image": {
+      "type": "image",
+      "color": "55, 255, 0",
+      "icon": {
+        "name": "image",
+        "type": "font-awesome"
+      },
+      "command": false,
+      "injectColor": true,
+      "noTitle": false
+    }
+  },
+  "syntaxHighlight": false,
+  "copyButton": false,
+  "version": "10.3.2",
+  "autoCollapse": false,
+  "defaultCollapseType": "open",
+  "injectColor": true,
+  "parseTitles": true,
+  "dropShadow": true,
+  "hideEmpty": false,
+  "open": {
+    "admonitions": true,
+    "icons": true,
+    "other": true,
+    "advanced": true
+  },
+  "icons": [
+    "octicons",
+    "rpg",
+    "bootstrap",
+    "material",
+    "hugeicons",
+    "simple"
+  ],
+  "useFontAwesome": true,
+  "rpgDownloadedOnce": false,
+  "msDocConverted": false,
+  "useSnippet": false,
+  "snippetPath": "custom-admonitions.d712b1"
+}

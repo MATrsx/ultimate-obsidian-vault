@@ -1,0 +1,52 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FlMoneyBag",
+      "FlTvTable",
+      "FlMusic",
+      "FlBonsai",
+      "FlBooks"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "custom",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "Home.md": "🏠",
+  "02 - Projects/Learning Obsidian.md": {
+    "iconName": "SiObsidian",
+    "iconColor": "#a079ff"
+  },
+  "03 - Areas/Workouts.md": "FlGym",
+  "03 - Areas/Wishlist & Shopping.md": "FlGift",
+  "03 - Areas/Restaurants, Cafés & Bars.md": "FlRoomService",
+  "03 - Areas/Travel.md": "FlAirplane",
+  "03 - Areas/Reading.md": "FlBooks",
+  "03 - Areas/Recipes.md": "FlFryingPan",
+  "03 - Areas/Finance.md": "FlMoneyBag",
+  "03 - Areas/Plants.md": "FlBonsai",
+  "03 - Areas/Music.md": "FlMusic",
+  "03 - Areas/Movies & TV.md": "FlTvTable"
+}

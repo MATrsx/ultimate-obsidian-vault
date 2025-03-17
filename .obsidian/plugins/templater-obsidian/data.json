@@ -1,0 +1,52 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "09 - Meta/94 - Templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "09 - Meta/93 - JavaScript/Templater",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "01 - Journal/11 - Daily",
+      "template": "09 - Meta/94 - Templates/plan/Daily.md"
+    },
+    {
+      "folder": "01 - Journal/12 - Weekly",
+      "template": "09 - Meta/94 - Templates/plan/Weekly.md"
+    },
+    {
+      "folder": "01 - Journal/13 - Monthly",
+      "template": "09 - Meta/94 - Templates/plan/Monthly.md"
+    },
+    {
+      "folder": "01 - Journal/14 - Quarterly",
+      "template": "09 - Meta/94 - Templates/plan/Quarterly.md"
+    },
+    {
+      "folder": "01 - Journal/15 - Yearly",
+      "template": "09 - Meta/94 - Templates/plan/Yearly.md"
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    "09 - Meta/94 - Templates/Multi-Column.md",
+    "09 - Meta/94 - Templates/Images.md"
+  ],
+  "startup_templates": []
+}

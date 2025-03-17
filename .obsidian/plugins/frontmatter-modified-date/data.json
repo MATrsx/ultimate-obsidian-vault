@@ -1,0 +1,17 @@
+{
+  "frontmatterProperty": "modified",
+  "createdDateProperty": "created",
+  "momentFormat": "[[[]YYYY-MM-DD|dddd, Do MMMM YYYY, HH:mm[]]]",
+  "storeHistoryLog": false,
+  "historyNewestFirst": false,
+  "historyMaxItems": 0,
+  "excludedFolders": [
+    "09 - Meta"
+  ],
+  "useKeyupEvents": false,
+  "onlyUpdateExisting": false,
+  "timeout": 10,
+  "excludeField": "exclude_modified_update",
+  "appendField": "append_modified_update",
+  "appendMaximumFrequency": "minute"
+}

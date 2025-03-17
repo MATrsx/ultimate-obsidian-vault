@@ -1,0 +1,71 @@
+div.cm-line:has(.icon-xs) span img.emoji, 
+div.cm-line:has(.icon-xs) span svg,
+.markdown-reading-view > div .icon-xs img.emoji,
+.markdown-reading-view > div .icon-xs svg {
+    font-size: 1em;
+    width: 1em;
+    height: 1em;
+    color: currentColor;
+}
+div.cm-line:has(.icon-sm) span img.emoji, 
+div.cm-line:has(.icon-sm) span svg,
+.markdown-reading-view > div .icon-sm img.emoji,
+.markdown-reading-view > div .icon-sm svg {
+    width: 1.5em;
+    height: 1.5em;
+    color: currentColor;
+}
+div.cm-line:has(.icon-md) span img.emoji,
+div.cm-line:has(.icon-md) span svg,
+.markdown-reading-view > div .icon-md img.emoji,
+.markdown-reading-view > div .icon-md svg {
+    width: 2em;
+    height: 2em;
+    color: currentColor;
+}
+div.cm-line:has(.icon-lg) span img.emoji,
+div.cm-line:has(.icon-lg) span svg,
+.markdown-reading-view > div .icon-lg img.emoji,
+.markdown-reading-view > div .icon-lg svg {
+    width: 2.5em;
+    height: 2.5em;
+    color: currentColor;
+}
+div.cm-line:has(.icon-xl) span img.emoji,
+div.cm-line:has(.icon-xl) span svg,
+.markdown-reading-view > div .icon-xl img.emoji,
+.markdown-reading-view > div .icon-xl svg {
+    width: 3em;
+    height: 3em;
+    color: currentColor;
+}
+div.cm-line:has(.icon-xxl) span img.emoji,
+div.cm-line:has(.icon-xxl) span svg,
+.markdown-reading-view > div .icon-xxl img.emoji,
+.markdown-reading-view > div .icon-xxl svg {
+    width: 4em;
+    height: 4em;
+    color: currentColor;
+}
+
+
+.markdown-reading-view > div[data-heading]:has(.icon-xs):before, 
+.markdown-reading-view > div[data-heading]:has(.icon-sm):before, 
+.markdown-reading-view > div[data-heading]:has(.icon-md):before, 
+.markdown-reading-view > div[data-heading]:has(.icon-lg):before, 
+.markdown-reading-view > div[data-heading]:has(.icon-xl):before, 
+.markdown-reading-view > div[data-heading]:has(.icon-xxl):before {
+    position: absolute;
+    top: unset;
+    bottom: 4px;
+    left: 0px;
+}
+.markdown-reading-view > div[data-heading]:has(.icon-xs) span.heading-collapse-indicator.collapse-indicator
+.markdown-reading-view > div[data-heading]:has(.icon-sm) span.heading-collapse-indicator.collapse-indicator
+.markdown-reading-view > div[data-heading]:has(.icon-md) span.heading-collapse-indicator.collapse-indicator
+.markdown-reading-view > div[data-heading]:has(.icon-lg) span.heading-collapse-indicator.collapse-indicator
+.markdown-reading-view > div[data-heading]:has(.icon-xl) span.heading-collapse-indicator.collapse-indicator
+.markdown-reading-view > div[data-heading]:has(.icon-xxl) span.heading-collapse-indicator.collapse-indicator {
+    position: absolute;
+    bottom: 0px;
+}
