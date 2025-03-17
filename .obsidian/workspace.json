@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07 - Resources/Example Resource.md",
-                "mode": "preview",
+                "file": "09 - Meta/92 - Banners/Banner.gif.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "07 - Resources/Example Resource.md"
+                "file": "09 - Meta/92 - Banners/Banner.gif.md"
               }
             }
           },
@@ -112,7 +112,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "07 - Resources/Example Resource.md",
+                "file": "09 - Meta/92 - Banners/Banner.gif.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -153,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "07 - Resources/Example Resource.md",
+                "file": "09 - Meta/92 - Banners/Banner.gif.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "07 - Resources/Example Resource.md",
+                "file": "09 - Meta/92 - Banners/Banner.gif.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,19 +192,30 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "iconic:Open rulebook": false,
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "a84d404161d45598",
+  "active": "05e8f8dd9f945a2f",
   "lastOpenFiles": [
+    "09 - Meta/91 - Attachments/Video/Video.mp4.md",
+    "09 - Meta/92 - Banners/Banner.gif.md",
+    "09 - Meta/91 - Attachments/PDFs/Document.pdf.md",
+    "09 - Meta/91 - Attachments/Images/Image.png.md",
+    "09 - Meta/91 - Attachments/Audio/Audio.mp3.md",
+    "04 - Knowledge/Notes/Fleeting Note.md",
+    "04 - Knowledge/Meetings/Example Meeting.md",
+    "04 - Knowledge/People/John Doe.md",
+    "01 - Journal/15 - Yearly/2025.md",
+    "01 - Journal/14 - Quarterly/2025-Q1.md",
+    "01 - Journal/13 - Monthly/2025-03.md",
+    "01 - Journal/11 - Daily/2025-03-17.md",
+    "01 - Journal/10 - Goals/Example Goal.md",
+    "07 - Resources/Example Resource.md",
     "README.md",
     "09 - Meta/94 - Templates/Multi-Column.md",
-    "07 - Resources/Example Resource.md",
     "00 - Inbox/Overview.md",
     "04 - Knowledge/Notes/hfghfg.md",
     "00 - Inbox/Habits.md",
-    "01 - Journal/11 - Daily/2025-03-17.md",
     "00 - Inbox/Test.md",
     "04 - Knowledge/Canvas/Dataview Queries.canvas",
     "09 - Meta/91 - Attachments/Images/image.png",
@@ -215,15 +226,8 @@
     "03 - Areas/Finance.md",
     "03 - Areas/Restaurants, Cafés & Bars.md",
     "Home.md",
-    "Welcome.md",
-    "01 - Journal/11 - Daily/Test.md",
-    "09 - Meta/94 - Templates/work/Meeting.md",
-    "04 - Knowledge/Meetings/2025-03-17 ~ Daily.md",
-    "01 - Journal/12 - Weekly/2025-W12.md",
-    "02 - Projects/Learning Obsidian.md",
     "09 - Meta/92 - Banners/pixel-image.png",
     "04 - Knowledge/Canvas",
-    "00 - Inbox/2025-03-17.md",
     "test.html",
     "09 - Meta/93 - JavaScript/Dataview/views/buttons/view.js",
     "09 - Meta/93 - JavaScript/Dataview/views/buttons/view.css",
@@ -231,14 +235,9 @@
     "04 - Knowledge/People",
     "04 - Knowledge/Meetings",
     "02 - Projects/Learning Obsidian/Sample Queries.canvas",
-    "09 - Meta/94 - Templates/work/People.md",
     "04 - Knowledge/People",
-    "09 - Meta/94 - Templates/Images.md",
-    "03 - Areas/Reading.md",
     "03 - Areas/Workouts/Notes",
     "03 - Areas/Wishlist & Shopping/Notes",
-    "03 - Areas/Finance/Notes/gdfs.md",
-    "03 - Areas/Wishlist & Shopping.md",
     "09 - Meta/92 - Banners/RiverHouse.jpg",
     "09 - Meta/92 - Banners/carolyn-jong-isometric-house1.jpg",
     "09 - Meta/92 - Banners/Analog Memories.gif",
